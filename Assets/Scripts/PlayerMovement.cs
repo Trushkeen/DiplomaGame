@@ -4,33 +4,39 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    void Start()
-    {
+    private float Speed = 5F;
+    private Rigidbody Rigid;
+    private bool SprintEnabled;
 
+    private void Start()
+    {
+        Rigid = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        SprintEnabled = (Input.GetKey(KeyCode.LeftShift) ? true : false);
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * 5F * Time.deltaTime;
+            transform.position += transform.forward * (SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.position += transform.forward * -5F * Time.deltaTime;
+            transform.position += transform.forward * -(SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * 5F * Time.deltaTime;
+            transform.position += transform.right * (SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.position += transform.right * -5F * Time.deltaTime;
+            transform.position += transform.right * -(SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var rigid = GetComponent<Rigidbody>();
-            rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
+            Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
         }
     }
 }
