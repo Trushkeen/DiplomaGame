@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        SprintEnabled = (Input.GetKey(KeyCode.LeftShift) ? true : false);
+        SprintEnabled = Input.GetKey(KeyCode.LeftShift);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -36,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2F, 11 << 8, QueryTriggerInteraction.Ignore))
+            {
+                Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
+            }
         }
     }
 }
