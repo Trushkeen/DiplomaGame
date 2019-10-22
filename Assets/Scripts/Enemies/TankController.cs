@@ -9,8 +9,11 @@ public class TankController : MonoBehaviour, IMobActions
 
     public void Attack(GameObject obj)
     {
-        obj.GetComponent<PlayerStats>().HP -= 20;
-        obj.GetComponent<Rigidbody>().AddForce(transform.up * 500F + transform.forward * 500F, ForceMode.Acceleration);
+        if (obj.CompareTag("Player"))
+        {
+            obj.GetComponent<PlayerStats>().HP -= 20F;
+            obj.GetComponent<Rigidbody>().AddForce(transform.up * 500F + transform.forward * 500F, ForceMode.Acceleration);
+        }
     }
 
     public void Death()
