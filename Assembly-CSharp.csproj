@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Enemies\IMobStats.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mob.cs" />
     <Compile Include="Assets\Scripts\Enemies\TankController.cs" />
+    <Compile Include="Assets\Scripts\MouseMove.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
