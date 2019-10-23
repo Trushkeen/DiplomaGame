@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.position += transform.forward * -(SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
+            transform.position += transform.forward * -Speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -41,5 +41,7 @@ public class PlayerMovement : MonoBehaviour
                 Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
             }
         }
+
+
     }
 }
