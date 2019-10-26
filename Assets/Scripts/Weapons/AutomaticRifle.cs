@@ -11,6 +11,14 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     public float AmmoClip { get; set; } = 30;
     public float AmmoNow { get; set; } = 30;
 
+    private bool AbleToShoot = true;
+    private AudioSource SoundEmitter;
+
+    private void Start()
+    {
+        SoundEmitter = GetComponent<AudioSource>();
+    }
+
     public void Reload()
     {
         if (AmmoNow != AmmoClip)
@@ -26,26 +34,39 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
 
     public void Shoot()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
+        if (AbleToShoot && AmmoNow > 0)
         {
-            var go = hit.collider.gameObject;
-            if (go.CompareTag("Enemy"))
+            SoundEmitter.Play();
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
-                go.GetComponent<Mob>().HP -= Damage;
+                var go = hit.collider.gameObject;
+                if (go.CompareTag("Enemy"))
+                {
+                    go.GetComponent<Mob>().HP -= Damage;
+                }
             }
+            AmmoNow--;
+            print(AmmoNow);
+            StartCoroutine(ShootingCooldown());
         }
-    }
-
-    void Start()
-    {
-
     }
 
     void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            Shoot();
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
         }
+    }
+
+    IEnumerator ShootingCooldown()
+    {
+        AbleToShoot = false;
+        yield return new WaitForSeconds(0.05F);
+        AbleToShoot = true;
     }
 }
