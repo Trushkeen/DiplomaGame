@@ -418,14 +418,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426e5236ce006b74b97886fc4d391a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 3
-  sensY: 3
-  minX: -360
-  maxX: 360
-  maxY: 60
-  minY: -60
-  rotX: 0
-  rotY: 0
+  SensX: 3
+  SensY: 3
+  MinX: -360
+  MaxX: 360
+  MaxY: 90
+  MinY: -90
+  RotX: 0
+  RotY: 0
 --- !u!1 &581876909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,38 +1100,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348125786}
   m_CullTransparentMesh: 0
---- !u!1 &1607346284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 159412612775295649, guid: 4857c292809737d40a0d75702f08696b,
-    type: 3}
-  m_PrefabInstance: {fileID: 159412613634631881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1607346285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 159412612775295653, guid: 4857c292809737d40a0d75702f08696b,
     type: 3}
   m_PrefabInstance: {fileID: 159412613634631881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1607346286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607346284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426e5236ce006b74b97886fc4d391a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SensX: 3
-  SensY: 3
-  MinX: -360
-  MaxX: 360
-  MaxY: 90
-  MinY: -90
-  RotX: 0
-  RotY: 0
 --- !u!1 &1631888563
 GameObject:
   m_ObjectHideFlags: 0
