@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class MouseMove : MonoBehaviour
 {
-    public float sensX = 3F;
-    public float sensY = 3F;
+    public float SensX = 3F;
+    public float SensY = 3F;
 
-    public float minX = -360;
-    public float maxX = 360;
-    public float maxY = -60;
-    public float minY = 60;
+    public float MinX = -360;
+    public float MaxX = 360;
+    public float MaxY = -60;
+    public float MinY = 60;
 
     private Quaternion OriginalRot;
     private Quaternion ParentRot; 
-    public float rotX = 0;
-    public float rotY = 0;
+    public float RotX = 0;
+    public float RotY = 0;
+
+    private static bool IsFrozen = false;
 
     private void Start()
     {
@@ -33,19 +35,42 @@ public class MouseMove : MonoBehaviour
 
     private void Update()
     {
-        rotX += Input.GetAxis("Mouse X") * sensX;
-        rotY += Input.GetAxis("Mouse Y") * sensY;
+        if (!IsFrozen)
+        {
+            RotX += Input.GetAxis("Mouse X") * SensX;
+            RotY += Input.GetAxis("Mouse Y") * SensY;
 
-        rotX = rotX % 360;
-        rotY = rotY % 360;
+            RotX = RotX % 360;
+            RotY = RotY % 360;
 
-        rotX = Mathf.Clamp(rotX, minX, maxX);
-        rotY = Mathf.Clamp(rotY, minY, maxY);
+            RotX = Mathf.Clamp(RotX, MinX, MaxX);
+            RotY = Mathf.Clamp(RotY, MinY, MaxY);
 
-        Quaternion xQuaternion = Quaternion.AngleAxis(rotX,Vector3.up);
-        Quaternion yQuaternion = Quaternion.AngleAxis(rotY, Vector3.left);
+            Quaternion xQuaternion = Quaternion.AngleAxis(RotX, Vector3.up);
+            Quaternion yQuaternion = Quaternion.AngleAxis(RotY, Vector3.left);
 
-        transform.localRotation = OriginalRot * yQuaternion;
-        transform.root.localRotation = xQuaternion; 
+            transform.localRotation = OriginalRot * yQuaternion;
+            transform.root.localRotation = xQuaternion;
+        }
+    }
+
+    public static void Freeze()
+    {
+        IsFrozen = true;
+    }
+
+    public static void Unfreeze()
+    {
+        IsFrozen = false;
+    }
+
+    public static void HideCursor()
+    {
+        Cursor.visible = false;
+    }
+
+    public static void ShowCursor()
+    {
+        Cursor.visible = true;
     }
 }
