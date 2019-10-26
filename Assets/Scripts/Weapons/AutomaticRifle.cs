@@ -36,11 +36,6 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
         }
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
