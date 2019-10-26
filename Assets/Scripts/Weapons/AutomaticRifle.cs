@@ -26,6 +26,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
 
     public void Shoot()
     {
+        print("paw paw");
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
         {
             var go = hit.collider.gameObject;
@@ -38,6 +39,10 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
 
     void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            Shoot();
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
