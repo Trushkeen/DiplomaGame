@@ -63,4 +63,14 @@ public class MouseMove : MonoBehaviour
     {
         IsFrozen = false;
     }
+
+    public static void HideCursor()
+    {
+        Cursor.visible = false;
+    }
+
+    public static void ShowCursor()
+    {
+        Cursor.visible = true;
+    }
 }
