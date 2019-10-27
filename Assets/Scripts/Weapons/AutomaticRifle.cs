@@ -7,7 +7,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     public float Damage { get; set; } = 23;
     public float Accuracy { get; set; } = 50;
     public float ReloadTime { get; set; } = 1.7F;
-    public float AmmoTotal { get; set; } = 50;
+    public float AmmoTotal { get; set; } = 250;
     public float AmmoClip { get; set; } = 30;
     public float AmmoNow { get; set; } = 30;
 
@@ -29,19 +29,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
                 AmmoNow = AmmoClip;
                 AmmoTotal -= AmmoClip;
             }
-            else if (AmmoNow + AmmoTotal <= AmmoClip)
-            {
-                AmmoNow += AmmoTotal;
-                AmmoTotal = 0;
-            }
-            else if (AmmoNow + AmmoTotal >= AmmoClip)
-            {
-                var diff = AmmoClip - AmmoNow;
-                AmmoNow += diff;
-                AmmoTotal -= diff;
-            }
         }
-        print(AmmoNow + "/" + AmmoTotal);
     }
 
     public void Shoot()
@@ -58,7 +46,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
                 }
             }
             AmmoNow--;
-            print(AmmoNow + "/" + AmmoTotal);
+            print(AmmoNow);
             StartCoroutine(ShootingCooldown());
         }
     }
@@ -78,7 +66,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;
-        yield return new WaitForSeconds(0.1F);
+        yield return new WaitForSeconds(0.05F);
         AbleToShoot = true;
     }
 }
