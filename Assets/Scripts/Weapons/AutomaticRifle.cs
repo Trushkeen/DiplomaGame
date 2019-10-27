@@ -7,7 +7,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     public float Damage { get; set; } = 23;
     public float Accuracy { get; set; } = 50;
     public float ReloadTime { get; set; } = 1.0F;
-    public float AmmoTotal { get; set; } = 40;
+    public float AmmoTotal { get; set; } = 1000;
     public float AmmoClip { get; set; } = 30;
     public float AmmoNow { get; set; } = 30;
 
@@ -56,6 +56,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
                     go.GetComponent<Mob>().HP -= Damage;
                 }
             }
+            MouseMove.ShakeCamera();
             AmmoNow--;
             print(AmmoNow + "/" + AmmoTotal);
             StartCoroutine(ShootingCooldown());
@@ -78,7 +79,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;
-        yield return new WaitForSeconds(0.05F);
+        yield return new WaitForSeconds(0.1F);
         AbleToShoot = true;
     }
 }

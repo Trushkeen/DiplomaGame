@@ -1552,8 +1552,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.171
       objectReference: {fileID: 0}
+    - target: {fileID: 4751242188795441437, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Name
+      value: BulletPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554717932753099900, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Name
+      value: BulletPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4857c292809737d40a0d75702f08696b, type: 3}
+--- !u!1 &159412613634631882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4751242188795441437, guid: 4857c292809737d40a0d75702f08696b,
+    type: 3}
+  m_PrefabInstance: {fileID: 159412613634631881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505318401911143813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8616966887658182406, guid: 988baaf886f3da64e88c662f9e6154d4,
@@ -1779,7 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41ac315ab75b3b4795c11cb34fa5559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPoint: {fileID: 0}
+  BulletPoint: {fileID: 159412613634631882}
 --- !u!1 &8296172669063206710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8149182140772892671, guid: 4857c292809737d40a0d75702f08696b,
