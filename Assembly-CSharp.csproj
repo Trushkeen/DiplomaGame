@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Debug\DebugInfoBuilder.cs" />
     <Compile Include="Assets\Scripts\Enemies\DrillAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\IMobActions.cs" />
