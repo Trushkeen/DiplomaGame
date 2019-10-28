@@ -13,34 +13,35 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
 
     private bool AbleToShoot = true;
     private AudioSource SoundEmitter;
+    private Animator AnimController;
 
     private void Start()
     {
         SoundEmitter = GetComponent<AudioSource>();
+        AnimController = GetComponent<Animator>();
     }
 
     public void Reload()
     {
-        if (AmmoNow != AmmoClip)
+        AnimController.SetBool("Reloading", false);
+        if (AmmoTotal >= AmmoClip)
         {
-            if (AmmoTotal >= AmmoClip)
-            {
-                AmmoTotal += AmmoNow;
-                AmmoNow = AmmoClip;
-                AmmoTotal -= AmmoClip;
-            }
-            else if (AmmoTotal - (AmmoClip - AmmoNow) < 0)
-            {
-                AmmoNow += AmmoTotal;
-                AmmoTotal = 0;
-            }
-            else if (AmmoTotal < AmmoClip)
-            {
-                var diff = AmmoClip - AmmoNow;
-                AmmoNow += diff;
-                AmmoTotal -= diff;
-            }
+            AmmoTotal += AmmoNow;
+            AmmoNow = AmmoClip;
+            AmmoTotal -= AmmoClip;
         }
+        else if (AmmoTotal - (AmmoClip - AmmoNow) < 0)
+        {
+            AmmoNow += AmmoTotal;
+            AmmoTotal = 0;
+        }
+        else if (AmmoTotal < AmmoClip)
+        {
+            var diff = AmmoClip - AmmoNow;
+            AmmoNow += diff;
+            AmmoTotal -= diff;
+        }
+
     }
 
     public void Shoot()
@@ -65,14 +66,16 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && AmmoNow != AmmoClip)
         {
             Reload();
-            print(AmmoNow + "/" + AmmoTotal);
+            AnimController.SetBool("Reloading", true);
+            //Reload();
+            //PrintAmmo();
         }
     }
 

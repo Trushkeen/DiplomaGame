@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3267134234107141828}
   - component: {fileID: 7506802973610145184}
+  - component: {fileID: 2478157844057938842}
   m_Layer: 0
   m_Name: AutomaticRifleTest (1)
   m_TagString: Untagged
@@ -210,6 +211,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2478157844057938842
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949047767883033815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59e9d9f4d25cc4a4a8ea8448afb36b60, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2133677622643092423
 GameObject:
   m_ObjectHideFlags: 0
