@@ -59,7 +59,6 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
             }
             MouseMove.ShakeCamera();
             AmmoNow--;
-            print(AmmoNow + "/" + AmmoTotal);
             StartCoroutine(ShootingCooldown());
         }
     }
@@ -69,6 +68,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
         if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
+            //PrintAmmo();
         }
         if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && AmmoNow != AmmoClip)
         {
@@ -79,10 +79,15 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
         }
     }
 
-    IEnumerator ShootingCooldown()
+    private IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;
         yield return new WaitForSeconds(0.1F);
         AbleToShoot = true;
+    }
+
+    private void PrintAmmo()
+    {
+        print(AmmoNow + "/" + AmmoTotal);
     }
 }
