@@ -1542,10 +1542,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
+    - target: {fileID: 8149182140772892671, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
@@ -1604,12 +1609,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4857c292809737d40a0d75702f08696b, type: 3}
---- !u!1 &159412613634631882 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4751242188795441437, guid: 4857c292809737d40a0d75702f08696b,
-    type: 3}
-  m_PrefabInstance: {fileID: 159412613634631881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505318401911143813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8616966887658182406, guid: 988baaf886f3da64e88c662f9e6154d4,
@@ -1817,25 +1816,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 988baaf886f3da64e88c662f9e6154d4, type: 3}
---- !u!1 &8296172667435718610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
-    type: 3}
-  m_PrefabInstance: {fileID: 159412613634631881}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8296172667435718611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667435718610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41ac315ab75b3b4795c11cb34fa5559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BulletPoint: {fileID: 159412613634631882}
 --- !u!1 &8296172669063206710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8149182140772892671, guid: 4857c292809737d40a0d75702f08696b,
