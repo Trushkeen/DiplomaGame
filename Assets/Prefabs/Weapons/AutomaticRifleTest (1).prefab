@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3267134234107141828}
   - component: {fileID: 7506802973610145184}
   - component: {fileID: 2478157844057938842}
+  - component: {fileID: 466534509906993313}
   m_Layer: 0
   m_Name: AutomaticRifleTest (1)
   m_TagString: Untagged
@@ -230,6 +231,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &466534509906993313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949047767883033815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4995c935e92606d4a90c38f676d26e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPoint: {fileID: 5291715311379648340}
 --- !u!1 &2133677622643092423
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3418474558278029872}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BulletPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

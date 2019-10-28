@@ -11,6 +11,8 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
     public float AmmoClip { get; set; } = 30;
     public float AmmoNow { get; set; } = 30;
 
+    public GameObject BulletPoint;
+
     private bool AbleToShoot = true;
     private AudioSource SoundEmitter;
     private Animator AnimController;
@@ -49,7 +51,7 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
         if (AbleToShoot && AmmoNow > 0)
         {
             SoundEmitter.Play();
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
                 var go = hit.collider.gameObject;
                 if (go.CompareTag("Enemy"))
