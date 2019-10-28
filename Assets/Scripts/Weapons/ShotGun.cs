@@ -19,25 +19,36 @@ public class ShotGun : MonoBehaviour,IWeapon
 
     public void Reload()
     {
-        if (AmmoNow != AmmoClip)
+        if (AmmoTotal >= AmmoClip)
         {
-            if (AmmoTotal > AmmoClip)
-            {
-                AmmoTotal += AmmoNow;
-                AmmoNow = AmmoClip;
-                AmmoTotal -= AmmoClip;
-            }
+            AmmoTotal += AmmoNow;
+            AmmoNow = AmmoClip;
+            AmmoTotal -= AmmoClip;
+        }
+        else if (AmmoTotal - (AmmoClip - AmmoNow) < 0)
+        {
+            AmmoNow += AmmoTotal;
+            AmmoTotal = 0;
+        }
+        else if (AmmoTotal < AmmoClip)
+        {
+            var diff = AmmoClip - AmmoNow;
+            AmmoNow += diff;
+            AmmoTotal -= diff;
         }
     }
 
     public void Shoot()
     {
-        if (AbleToShoot) {
+       
+        if (AbleToShoot && AmmoNow!=0) {
             SoundEmitter.Play();
 
             for (int Bull = 0; Bull < 8; Bull++) {
 
-                if (Physics.Raycast(BulletPoint.transform.position, transform.forward * Random.Range(10, 100), out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
+                Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward * 100f, Color.red);
+
+                if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward * Random.Range(0.1F, 0.9F), out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
                 {
                     var go = hit.collider.gameObject;
                     if (go.CompareTag("Enemy"))
@@ -48,7 +59,6 @@ public class ShotGun : MonoBehaviour,IWeapon
                 }
             }
             AmmoNow--;
-            print(AmmoNow);
             StartCoroutine(ShootingCooldown());
         }
     }
@@ -60,6 +70,7 @@ public class ShotGun : MonoBehaviour,IWeapon
 
     void Update()
     {
+        print(AmmoNow);
 
         if (Input.GetMouseButton(0))
         {
