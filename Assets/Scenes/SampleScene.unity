@@ -468,7 +468,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: e07f3f5c17965c444be71050f7c50b6d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7dafc4216d3782840be8d204359b992f, type: 2}
 --- !u!1 &954474956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,10 +1537,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: AutomaticRifleTest
       objectReference: {fileID: 0}
+    - target: {fileID: 8149182140772892671, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5137740912577858824, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
@@ -1557,10 +1567,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4751242188795441437, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2554717932753099900, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_Name
       value: BulletPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554717932753099900, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612999165032626415, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543969556963429723, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954231237681301828, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703017968186882724, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4857c292809737d40a0d75702f08696b, type: 3}
