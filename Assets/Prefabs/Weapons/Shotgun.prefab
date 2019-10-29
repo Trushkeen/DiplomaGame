@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6308747370501539034}
   - component: {fileID: 2307545595465840252}
   - component: {fileID: 3634651562994223700}
+  - component: {fileID: 6060893217183421103}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -190,6 +191,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPoint: {fileID: 9172005197941702144}
+--- !u!95 &6060893217183421103
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742646162758742022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04194ef92d8dab94b814488ffd58877d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9172005197941702144
 GameObject:
   m_ObjectHideFlags: 0
