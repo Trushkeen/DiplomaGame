@@ -1,0 +1,3 @@
+-startdebuglvl=Запустить отл. уровень
+-settings=Настройки
+-exit=Выход

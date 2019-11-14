@@ -1,0 +1,3 @@
+-startdebuglvl=Start Debug Level
+-settings=Settings
+-exit=Exit
