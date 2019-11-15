@@ -9,7 +9,7 @@ public class ShotGun : MonoBehaviour,IWeapon
     public float Damage { get; set; } = 60;
     public float Accuracy { get; set; } = 20;
     public float ReloadTime { get; set; } = 1F;
-    public float AmmoTotal { get; set; } = 25;
+    public float AmmoTotal { get; set; } = 3;
     public float AmmoClip { get; set; } = 2;
     public float AmmoNow { get; set; } = 2;
 
@@ -17,8 +17,11 @@ public class ShotGun : MonoBehaviour,IWeapon
 
     private AudioSource SoundEmitter;
 
+    private Animator AnimController;
+
     public void Reload()
     {
+        AnimController.SetBool("Reload", false);
         if (AmmoTotal >= AmmoClip)
         {
             AmmoTotal += AmmoNow;
@@ -66,19 +69,21 @@ public class ShotGun : MonoBehaviour,IWeapon
     void Start()
     {
         SoundEmitter = GetComponent<AudioSource>();
+        AnimController = GetComponent<Animator>();
     }
 
     void Update()
     {
         print(AmmoNow);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)&&AnimController.GetBool("Reload") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reload") == false && AmmoNow != AmmoClip && AmmoTotal!=0)
         {
-            Reload();
+            //Reload();
+            AnimController.SetBool("Reload", true);
         }
     }
     IEnumerator ShootingCooldown()
