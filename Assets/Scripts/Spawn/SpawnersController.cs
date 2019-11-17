@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class InSpawn : MonoBehaviour
+public class SpawnersController : MonoBehaviour
 {
     GameObject[] PlayerArray;
-    GameObject[] SpawnMobArray;
+    GameObject[] SpawnersArray;
     public float MaxRange = 500F;
     public float MinRange = 100F;
 
     private void Start()
     {
-        SpawnMobArray = GameObject.FindGameObjectsWithTag("SpawnMob");
+        SpawnersArray = GameObject.FindGameObjectsWithTag("SpawnMob");
 
     }
     private void FixedUpdate()
@@ -24,7 +24,7 @@ public class InSpawn : MonoBehaviour
     {
     
 
-        foreach (var itemSpawn in SpawnMobArray)
+        foreach (var itemSpawn in SpawnersArray)
         {
             foreach (var itemPlayer in PlayerArray)
             {

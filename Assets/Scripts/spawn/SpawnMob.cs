@@ -9,9 +9,11 @@ public class SpawnMob : MonoBehaviour
     Vector3 SpawnVector;
     public int maxSpawn = 5;
     private bool AbleToSpawn = true;
+
+    public GameObject[] Enemies;
+
     private void Start()
     {
-        obj = GameObject.FindGameObjectWithTag("Enemy");
         SpawnVector = new Vector3(transform.position.x, 26F, transform.position.z);
     }
 
@@ -19,7 +21,7 @@ public class SpawnMob : MonoBehaviour
     {
         if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= maxSpawn)
         {
-            var obje = Instantiate(obj, SpawnVector,transform.rotation).transform.parent = null;
+            var obje = Instantiate(Enemies[0], SpawnVector,transform.rotation).transform.parent = null;
             obje.GetComponent<NavMeshAgent>().Warp(gameObject.transform.position);
 
             StartCoroutine(SpawnCooldown());

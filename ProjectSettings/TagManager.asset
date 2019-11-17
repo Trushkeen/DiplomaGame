@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - PlayerWeapon
+  - SpawnMob
   layers:
   - Default
   - TransparentFX
