@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponBase : MonoBehaviour
 {
-    public float Damage { get; set; }
-    public float Accuracy { get; set; }
-    public float AmmoTotal { get; set; }
-    public float AmmoClip { get; set; }
-    public float AmmoNow { get; set; }
+    public float Damage;
+    public float Accuracy;
+    public float AmmoTotal;
+    public float AmmoClip;
+    public float AmmoNow;
 }

@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class AutomaticRifle : MonoBehaviour
 {
-    public float Damage { get; set; } = 23;
-    public float Accuracy { get; set; } = 50;
-    public float AmmoTotal { get; set; } = 1000;
-    public float AmmoClip { get; set; } = 30;
-    public float AmmoNow { get; set; } = 30;
+    public WeaponBase WB;
 
     public GameObject BulletPoint;
 
@@ -18,6 +14,7 @@ public class AutomaticRifle : MonoBehaviour
 
     private void Start()
     {
+        WB = GetComponent<WeaponBase>();
         SoundEmitter = GetComponent<AudioSource>();
         AnimController = GetComponent<Animator>();
     }
@@ -25,28 +22,28 @@ public class AutomaticRifle : MonoBehaviour
     public void Reload()
     {
         AnimController.SetBool("Reloading", false);
-        if (AmmoTotal >= AmmoClip)
+        if (WB.AmmoTotal >= WB.AmmoClip)
         {
-            AmmoTotal += AmmoNow;
-            AmmoNow = AmmoClip;
-            AmmoTotal -= AmmoClip;
+            WB.AmmoTotal += WB.AmmoNow;
+            WB.AmmoNow = WB.AmmoClip;
+            WB.AmmoTotal -= WB.AmmoClip;
         }
-        else if (AmmoTotal - (AmmoClip - AmmoNow) < 0)
+        else if (WB.AmmoTotal - (WB.AmmoClip - WB.AmmoNow) < 0)
         {
-            AmmoNow += AmmoTotal;
-            AmmoTotal = 0;
+            WB.AmmoNow += WB.AmmoTotal;
+            WB.AmmoTotal = 0;
         }
-        else if (AmmoTotal < AmmoClip)
+        else if (WB.AmmoTotal < WB.AmmoClip)
         {
-            var diff = AmmoClip - AmmoNow;
-            AmmoNow += diff;
-            AmmoTotal -= diff;
+            var diff = WB.AmmoClip - WB.AmmoNow;
+            WB.AmmoNow += diff;
+            WB.AmmoTotal -= diff;
         }
     }
 
     public void Shoot()
     {
-        if (AbleToShoot && AmmoNow > 0)
+        if (AbleToShoot && WB.AmmoNow > 0)
         {
             SoundEmitter.Play();
             if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
@@ -54,11 +51,11 @@ public class AutomaticRifle : MonoBehaviour
                 var go = hit.collider.gameObject;
                 if (go.CompareTag("Enemy"))
                 {
-                    go.GetComponent<Mob>().HP -= Damage;
+                    go.GetComponent<Mob>().HP -= WB.Damage;
                 }
             }
             MouseMove.ShakeCamera();
-            AmmoNow--;
+            WB.AmmoNow--;
             StartCoroutine(ShootingCooldown());
         }
     }
@@ -68,14 +65,11 @@ public class AutomaticRifle : MonoBehaviour
         if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
-            //PrintAmmo();
         }
-        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && AmmoNow != AmmoClip)
+        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip)
         {
-            Reload();
-            AnimController.SetBool("Reloading", true);
             //Reload();
-            //PrintAmmo();
+            AnimController.SetBool("Reloading", true);
         }
     }
 
@@ -88,6 +82,6 @@ public class AutomaticRifle : MonoBehaviour
 
     private void PrintAmmo()
     {
-        print(AmmoNow + "/" + AmmoTotal);
+        print(WB.AmmoNow + "/" + WB.AmmoTotal);
     }
 }
