@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutomaticRifle : MonoBehaviour, IWeapon
+public class AutomaticRifle : MonoBehaviour
 {
     public float Damage { get; set; } = 23;
     public float Accuracy { get; set; } = 50;
-    public float ReloadTime { get; set; } = 1.0F;
     public float AmmoTotal { get; set; } = 1000;
     public float AmmoClip { get; set; } = 30;
     public float AmmoNow { get; set; } = 30;
@@ -43,7 +42,6 @@ public class AutomaticRifle : MonoBehaviour, IWeapon
             AmmoNow += diff;
             AmmoTotal -= diff;
         }
-
     }
 
     public void Shoot()

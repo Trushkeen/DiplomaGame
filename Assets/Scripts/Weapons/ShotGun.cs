@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotGun : MonoBehaviour,IWeapon
+public class ShotGun : MonoBehaviour
 {
     private bool AbleToShoot = true;
 
     public float Damage { get; set; } = 60;
     public float Accuracy { get; set; } = 20;
-    public float ReloadTime { get; set; } = 1F;
     public float AmmoTotal { get; set; } = 3;
     public float AmmoClip { get; set; } = 2;
     public float AmmoNow { get; set; } = 2;
