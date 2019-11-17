@@ -1708,7 +1708,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 159412613634631881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1871005571
+--- !u!114 &1871005577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2139,6 +2139,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9136532114960671271, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46936dcd285f3de4b93caaeafec20f29, type: 2}
     - target: {fileID: 7419589683409049339, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_TagString
@@ -2147,7 +2152,7 @@ PrefabInstance:
     - target: {fileID: 7419589683409049339, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 159412611918184470, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
@@ -2158,6 +2163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BulletPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 159412612775295653, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.095
       objectReference: {fileID: 0}
     - target: {fileID: 8519765158739764483, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
@@ -2242,7 +2252,7 @@ PrefabInstance:
     - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8149182142365515547, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}

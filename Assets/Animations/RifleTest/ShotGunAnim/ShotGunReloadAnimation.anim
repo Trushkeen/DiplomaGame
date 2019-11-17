@@ -154,14 +154,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.3666666
         value: {x: 0.285, y: -0.179, z: 1.316}
-        inSlope: {x: 0, y: 0, z: -0.050798237}
-        outSlope: {x: 0, y: 0, z: -0.050798237}
+        inSlope: {x: 0, y: 0, z: -0.08466374}
+        outSlope: {x: 0, y: 0, z: -0.08466374}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2.95
+        time: 2.5833333
         value: {x: 0.285, y: -0.179, z: 0.76}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -303,7 +303,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.3333333
+    m_StopTime: 2.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -395,7 +395,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.95
+        time: 2.5833333
         value: 0.285
         inSlope: 0
         outSlope: 0
@@ -486,7 +486,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.95
+        time: 2.5833333
         value: -0.179
         inSlope: 0
         outSlope: 0
@@ -570,14 +570,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.3666666
         value: 1.316
-        inSlope: -0.050798237
-        outSlope: -0.050798237
+        inSlope: -0.08466374
+        outSlope: -0.08466374
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.95
+        time: 2.5833333
         value: 0.76
         inSlope: 0
         outSlope: 0
@@ -1121,7 +1121,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 3.3333333
+  - time: 2.5
     functionName: Reload
     data: 
     objectReferenceParameter: {fileID: 0}
