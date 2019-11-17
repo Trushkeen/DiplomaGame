@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Katana : MonoBehaviour
 {
+    public WeaponBase WB;
+
     Animator AnimController;
     public void Attack(GameObject obj)
     {

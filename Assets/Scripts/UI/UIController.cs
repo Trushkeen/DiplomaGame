@@ -18,19 +18,26 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        var tr = PlayerCamera.transform;
+        UpdateHPText();
+        UpdateAmmoText();
+    }
+
+    void UpdateHPText()
+    {
         var playerStats = PlayerCamera.transform.root.gameObject.GetComponent<PlayerStats>();
         HPText.text = "HP: " + playerStats.HP;
-        var currentWeapon = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<WeaponBase>();
-        AmmoText.text = $"{currentWeapon.AmmoNow}/{currentWeapon.AmmoTotal}";
+    }
 
-        //var info = new DebugInfoBuilder();
-        //string debugInfo = string.Empty;
-        //if (Physics.Raycast(tr.position, tr.forward, out RaycastHit hit, 10F, ~(2 << 8), QueryTriggerInteraction.Ignore))
-        //{
-        //    info.AddFacingInfo(hit.collider.name);
-        //}
-        //info.AddVector3Info("Camera Pos", PlayerCamera.transform.position);
-        //DebugText.text = info.Return();
+    void UpdateAmmoText()
+    {
+        var currentWeapon = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<WeaponBase>();
+        if (currentWeapon.AmmoClip != 0)
+        {
+            AmmoText.text = $"{currentWeapon.AmmoNow}/{currentWeapon.AmmoTotal}";
+        }
+        else
+        {
+            AmmoText.text = "MELEE";
+        }
     }
 }

@@ -1702,6 +1702,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1871005570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7419589683409049339, guid: 4857c292809737d40a0d75702f08696b,
+    type: 3}
+  m_PrefabInstance: {fileID: 159412613634631881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1871005571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871005570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2597b09ae50082d4fa0740303ec678b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 80
+  Accuracy: 0
+  AmmoTotal: 0
+  AmmoClip: 0
+  AmmoNow: 0
 --- !u!1 &2011204166
 GameObject:
   m_ObjectHideFlags: 0
