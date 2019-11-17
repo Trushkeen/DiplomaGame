@@ -83,7 +83,7 @@ public class ShotGun : MonoBehaviour
     IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;
-        yield return new WaitForSeconds(0.9F);
+        yield return new WaitForSeconds(0.3F);
         AbleToShoot = true;
     }
 }
