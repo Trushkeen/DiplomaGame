@@ -6,11 +6,7 @@ public class ShotGun : MonoBehaviour
 {
     private bool AbleToShoot = true;
 
-    public float Damage { get; set; } = 60;
-    public float Accuracy { get; set; } = 20;
-    public float AmmoTotal { get; set; } = 3;
-    public float AmmoClip { get; set; } = 2;
-    public float AmmoNow { get; set; } = 2;
+    public WeaponBase WB;
 
     public GameObject BulletPoint;
 
@@ -18,32 +14,39 @@ public class ShotGun : MonoBehaviour
 
     private Animator AnimController;
 
+    void Start()
+    {
+        WB = GetComponent<WeaponBase>();
+        SoundEmitter = GetComponent<AudioSource>();
+        AnimController = GetComponent<Animator>();
+    }
+
     public void Reload()
     {
         AnimController.SetBool("Reload", false);
-        if (AmmoTotal >= AmmoClip)
+        if (WB.AmmoTotal >= WB.AmmoClip)
         {
-            AmmoTotal += AmmoNow;
-            AmmoNow = AmmoClip;
-            AmmoTotal -= AmmoClip;
+            WB.AmmoTotal += WB.AmmoNow;
+            WB.AmmoNow = WB.AmmoClip;
+            WB.AmmoTotal -= WB.AmmoClip;
         }
-        else if (AmmoTotal - (AmmoClip - AmmoNow) < 0)
+        else if (WB.AmmoTotal - (WB.AmmoClip - WB.AmmoNow) < 0)
         {
-            AmmoNow += AmmoTotal;
-            AmmoTotal = 0;
+            WB.AmmoNow += WB.AmmoTotal;
+            WB.AmmoTotal = 0;
         }
-        else if (AmmoTotal < AmmoClip)
+        else if (WB.AmmoTotal < WB.AmmoClip)
         {
-            var diff = AmmoClip - AmmoNow;
-            AmmoNow += diff;
-            AmmoTotal -= diff;
+            var diff = WB.AmmoClip - WB.AmmoNow;
+            WB.AmmoNow += diff;
+            WB.AmmoTotal -= diff;
         }
     }
 
     public void Shoot()
     {
        
-        if (AbleToShoot && AmmoNow!=0) {
+        if (AbleToShoot && WB.AmmoNow !=0) {
             SoundEmitter.Play();
 
             for (int Bull = 0; Bull < 8; Bull++) {
@@ -55,31 +58,23 @@ public class ShotGun : MonoBehaviour
                     var go = hit.collider.gameObject;
                     if (go.CompareTag("Enemy"))
                     {
-                        go.GetComponent<Mob>().HP -= Damage;
+                        go.GetComponent<Mob>().HP -= WB.Damage;
                     }
                     Bull++;
                 }
             }
-            AmmoNow--;
+            WB.AmmoNow--;
             StartCoroutine(ShootingCooldown());
         }
     }
 
-    void Start()
-    {
-        SoundEmitter = GetComponent<AudioSource>();
-        AnimController = GetComponent<Animator>();
-    }
-
     void Update()
     {
-        print(AmmoNow);
-
         if (Input.GetMouseButton(0)&&AnimController.GetBool("Reload") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reload") == false && AmmoNow != AmmoClip && AmmoTotal!=0)
+        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reload") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal !=0)
         {
             //Reload();
             AnimController.SetBool("Reload", true);
