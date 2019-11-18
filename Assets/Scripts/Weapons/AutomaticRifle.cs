@@ -9,13 +9,13 @@ public class AutomaticRifle : MonoBehaviour
     public GameObject BulletPoint;
 
     private bool AbleToShoot = true;
-    private AudioSource SoundEmitter;
+    private WeaponSoundController Emitter;
     private Animator AnimController;
 
     private void Start()
     {
         WB = GetComponent<WeaponBase>();
-        SoundEmitter = GetComponent<AudioSource>();
+        Emitter = GetComponent<WeaponSoundController>();
         AnimController = GetComponent<Animator>();
     }
 
@@ -45,7 +45,7 @@ public class AutomaticRifle : MonoBehaviour
     {
         if (AbleToShoot && WB.AmmoNow > 0)
         {
-            SoundEmitter.Play();
+            Emitter.PlayShot();
             if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
                 var go = hit.collider.gameObject;

@@ -10,14 +10,14 @@ public class ShotGun : MonoBehaviour
 
     public GameObject BulletPoint;
 
-    private AudioSource SoundEmitter;
+    private WeaponSoundController Emitter;
 
     private Animator AnimController;
 
     void Start()
     {
         WB = GetComponent<WeaponBase>();
-        SoundEmitter = GetComponent<AudioSource>();
+        Emitter = GetComponent<WeaponSoundController>();
         AnimController = GetComponent<Animator>();
     }
 
@@ -47,7 +47,7 @@ public class ShotGun : MonoBehaviour
     {
        
         if (AbleToShoot && WB.AmmoNow !=0) {
-            SoundEmitter.Play();
+            Emitter.PlayShot();
 
             for (int Bull = 0; Bull < 8; Bull++) {
 
