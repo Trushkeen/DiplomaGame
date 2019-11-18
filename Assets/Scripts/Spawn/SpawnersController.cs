@@ -31,12 +31,10 @@ public class SpawnersController : MonoBehaviour
                 float distance = Vector3.Distance(itemSpawn.transform.position, itemPlayer.transform.position);
                 if (distance < MaxRange && distance > MinRange)
                 {
-                    print(distance);
                     itemSpawn.SetActive(true);
                 }
                 else
                 {
-                    print(distance);
                     itemSpawn.SetActive(false);
                 }
             }

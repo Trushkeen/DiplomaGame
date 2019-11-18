@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Enemies\DrillAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\IMobActions.cs" />
     <Compile Include="Assets\Scripts\Enemies\IMobStats.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MilitaryTankController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mob.cs" />
     <Compile Include="Assets\Scripts\Enemies\TankController.cs" />
     <Compile Include="Assets\Scripts\GameStartEvents.cs" />

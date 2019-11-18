@@ -22,7 +22,7 @@ public class SpawnMob : MonoBehaviour
         if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= maxSpawn)
         {
             var obje = Instantiate(Enemies[0], SpawnVector,transform.rotation).transform.parent = null;
-            obje.GetComponent<NavMeshAgent>().Warp(gameObject.transform.position);
+            //obje.GetComponent<NavMeshAgent>().Warp(gameObject.transform.position);
 
             StartCoroutine(SpawnCooldown());
         }
