@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2F, 11 << 8, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
             {
                 Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
             }

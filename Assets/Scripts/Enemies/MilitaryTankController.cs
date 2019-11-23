@@ -7,6 +7,7 @@ public class MilitaryTankController : MonoBehaviour
 {
     public GameObject TankShell;
     public GameObject TankShellPoint;
+    public float ShotDelay;
 
     public GameObject Tower;
 
@@ -24,11 +25,14 @@ public class MilitaryTankController : MonoBehaviour
     void Update()
     {
         MoveToTarget();
-        Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+        Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y - 1, Player.transform.position.z);
         Tower.transform.LookAt(targetPos);
-        if (AbleToShootRocket)
+        if (AbleToShootRocket &&
+            Vector3.Distance(transform.position, Player.transform.position) >= 1 &&
+            Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
+                out RaycastHit hit, 200F))
         {
-            if (Vector3.Distance(transform.position, Player.transform.position) >= 20)
+            if (hit.transform.gameObject.CompareTag("Player"))
             {
                 var obj = Instantiate(TankShell);
                 obj.transform.position = TankShellPoint.transform.position;
@@ -36,6 +40,7 @@ public class MilitaryTankController : MonoBehaviour
                 StartCoroutine(ShootRocket());
             }
         }
+        Debug.DrawRay(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F, Color.red);
     }
 
     public void MoveToTarget()
@@ -48,7 +53,7 @@ public class MilitaryTankController : MonoBehaviour
     IEnumerator ShootRocket()
     {
         AbleToShootRocket = false;
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(ShotDelay);
         AbleToShootRocket = true;
     }
 }
