@@ -221,6 +221,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5111970741557923060, guid: 5a1a892efefe29b41961fc79d630ffe8,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1a892efefe29b41961fc79d630ffe8, type: 3}
 --- !u!1 &288453117
@@ -549,6 +554,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock5B
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 51368a5ba8a38f740baa9f2a132a2321,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51368a5ba8a38f740baa9f2a132a2321,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -713,9 +723,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.6666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7dafc4216d3782840be8d204359b992f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8cf1816fde7260c45bfcefd16b4ed4c1, type: 2}
 --- !u!1 &954474956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1877,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611861536835580306, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714369618719717998, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413708938302674581, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151709953968131332, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821979310550655087, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 128006692856476305, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634335147276111143, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714369618719717992, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714369618719717994, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4857c292809737d40a0d75702f08696b, type: 3}

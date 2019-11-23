@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3062843474092776024}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BodyGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2255784861095358283}
   - component: {fileID: 3021653088473600849}
   - component: {fileID: 8200047385971117372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 169689455137761013}
   - component: {fileID: 128168740188890821}
   - component: {fileID: 3211704792536620626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 6797641099112489939}
   - component: {fileID: 5658343493984505003}
   - component: {fileID: 3108998389413868519}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunHandlerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 1995769438660164158}
   - component: {fileID: 2880257501660461745}
   - component: {fileID: 7776270278603709064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 626728878012846236}
   - component: {fileID: 6969079830552591898}
   - component: {fileID: 7046019328373386556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ControlBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5548595440027380763}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TowerGroup
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -448,8 +448,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790165132593539840}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.619, y: 2, z: 0.8976059}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.0019999743, y: -0.07999992, z: -0.8976059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4087922219936498228}
@@ -464,7 +464,7 @@ Transform:
   - {fileID: 7306895570997166203}
   - {fileID: 8029229298455736678}
   - {fileID: 4475333370459357624}
-  m_Father: {fileID: 1989207846854824516}
+  m_Father: {fileID: 294087633961818360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2258222146902185952
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 6153631511547422762}
   - component: {fileID: 6150003392181941053}
   - component: {fileID: 3997447265911526857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5548595440027380763}
+  - {fileID: 294087633961818360}
   - {fileID: 3062843474092776024}
   - {fileID: 8357157441119338810}
   m_Father: {fileID: 6011495354146678279}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 3037408531007378456}
   - component: {fileID: 177572998667516018}
   - component: {fileID: 1906104917296625573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelsCaseLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 6167784867600711544}
   - component: {fileID: 4312331333156200917}
   - component: {fileID: 4765078886422108586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PreminigunLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 1926593512315916541}
   - component: {fileID: 4819227376778119331}
   - component: {fileID: 3245113791089491294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MinigunLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 7306895570997166203}
   - component: {fileID: 2255702180295789565}
   - component: {fileID: 9182445559528016606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PreminigunRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 5678575245286548086}
   - component: {fileID: 8075832473874741604}
   - component: {fileID: 9037535861344863}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunHandlerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 8029229298455736678}
   - component: {fileID: 2212012219657556122}
   - component: {fileID: 3371649823165427449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MinigunRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 4475333370459357624}
   - component: {fileID: 5634159679611369012}
   - component: {fileID: 533559830617944944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ColliderTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 3759613977007233381}
   - component: {fileID: 5644887721453959898}
   - component: {fileID: 9024382900965126789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,6 +1146,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &5544668343079223823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294087633961818360}
+  m_Layer: 10
+  m_Name: ParentTowerGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &294087633961818360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544668343079223823}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.621, y: 2.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5548595440027380763}
+  m_Father: {fileID: 1989207846854824516}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &6558582114089914703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1188,7 @@ GameObject:
   - component: {fileID: 5793835320084130524}
   - component: {fileID: 3756150503816664002}
   - component: {fileID: 1602913396596537256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelsCaseRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,9 +1268,9 @@ GameObject:
   - component: {fileID: 5700812143775232014}
   - component: {fileID: -5111970741557923060}
   - component: {fileID: 1281061741360528919}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MilitaryTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,16 +1334,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 7293094661688923156}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 4
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1328,6 +1359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74392ce9b8fdf2c44ab82d7b80dc3709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TankShell: {fileID: 0}
+  TankShellPoint: {fileID: 8202996655580730047}
+  Tower: {fileID: 5544668343079223823}
 --- !u!1 &7455527043582417937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1373,7 @@ GameObject:
   - component: {fileID: 4087922219936498228}
   - component: {fileID: 5914268942761129820}
   - component: {fileID: 678658235441018894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1415,8 +1449,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8357157441119338810}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Layer: 10
+  m_Name: TankShellPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,7 +1464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8202996655580730047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.649, y: 0, z: 0}
+  m_LocalPosition: {x: -0.649, y: 5.925, z: 4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1989207846854824516}
@@ -1447,7 +1481,7 @@ GameObject:
   - component: {fileID: 1482190777601108218}
   - component: {fileID: 7435216385228473171}
   - component: {fileID: 8872343494169513582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WheelsLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1559,7 @@ GameObject:
   - component: {fileID: 9109555363430906949}
   - component: {fileID: 8606668892368031196}
   - component: {fileID: 4133372254259058334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
