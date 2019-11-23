@@ -5,23 +5,56 @@ using UnityEngine.AI;
 
 public class MilitaryTankController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject TankShell;
+    public GameObject TankShellPoint;
+    public float ShotDelay;
+
+    public GameObject Tower;
+
+    private NavMeshAgent NavAgent;
+    private GameObject Player;
+    private bool AbleToShootRocket;
+
     void Start()
     {
-        
+        NavAgent = GetComponent<NavMeshAgent>();
+        Player = FindObjectOfType<PlayerMovement>().gameObject;
+        StartCoroutine(ShootRocket());
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveToTarget();
+        Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y - 1, Player.transform.position.z);
+        Tower.transform.LookAt(targetPos);
+        if (AbleToShootRocket &&
+            Vector3.Distance(transform.position, Player.transform.position) >= 1 &&
+            //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
+            Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
+                out RaycastHit hit, 200F))
+        {
+            if (hit.transform.gameObject.CompareTag("Player"))
+            {
+                var obj = Instantiate(TankShell);
+                obj.transform.position = TankShellPoint.transform.position;
+                obj.transform.rotation = TankShellPoint.transform.rotation;
+                StartCoroutine(ShootRocket());
+            }
+        }
+        //Debug.DrawRay(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F, Color.red);
     }
 
     public void MoveToTarget()
     {
-        var agent = GetComponent<NavMeshAgent>();
-        var playerPos = FindObjectOfType<PlayerMovement>().transform.position;
-        agent.speed = GetComponent<Mob>().Speed;
-        agent.SetDestination(playerPos);
+        var playerPos = Player.transform.position;
+        NavAgent.speed = GetComponent<Mob>().Speed;
+        NavAgent.SetDestination(playerPos);
+    }
+
+    IEnumerator ShootRocket()
+    {
+        AbleToShootRocket = false;
+        yield return new WaitForSeconds(ShotDelay);
+        AbleToShootRocket = true;
     }
 }
