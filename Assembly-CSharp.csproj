@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Weapons\AutomaticRifle.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\Katana.cs" />
+    <Compile Include="Assets\Scripts\Weapons\RocketBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBase.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponSoundController.cs" />
