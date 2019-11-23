@@ -11,6 +11,7 @@ public class RocketBehaviour : MonoBehaviour
 
     void Update()
     {
+        //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
         transform.position += transform.forward * -1F;
     }
 

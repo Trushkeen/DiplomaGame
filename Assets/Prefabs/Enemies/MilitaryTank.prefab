@@ -1362,7 +1362,7 @@ MonoBehaviour:
   TankShell: {fileID: 6612433094912196964, guid: f622d5067d4ec6a4c9ab48a5d35b7af7,
     type: 3}
   TankShellPoint: {fileID: 8202996655580730047}
-  ShotDelay: 1
+  ShotDelay: 5
   Tower: {fileID: 5544668343079223823}
 --- !u!1 &7455527043582417937
 GameObject:
