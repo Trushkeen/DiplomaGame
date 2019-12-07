@@ -25,13 +25,33 @@ public class MilitaryTankController : MonoBehaviour
     void Update()
     {
         MoveToTarget();
+        RotateTowerToPlayer();
+        TryToShootRocketInPlayer();
+
+        //Debug.DrawRay(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F, Color.red);
+    }
+
+    public void MoveToTarget()
+    {
+        var playerPos = Player.transform.position;
+        NavAgent.speed = GetComponent<Mob>().Speed;
+        NavAgent.SetDestination(playerPos);
+    }
+
+    // should be remade to face nearest player (calculate distance)
+    void RotateTowerToPlayer()
+    {
         Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y - 1, Player.transform.position.z);
         Tower.transform.LookAt(targetPos);
+    }
+
+    void TryToShootRocketInPlayer()
+    {
         if (AbleToShootRocket &&
-            Vector3.Distance(transform.position, Player.transform.position) >= 1 &&
-            //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
-            Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
-                out RaycastHit hit, 200F))
+        Vector3.Distance(transform.position, Player.transform.position) >= 1 &&
+        //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
+        Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
+        out RaycastHit hit, 200F))
         {
             if (hit.transform.gameObject.CompareTag("Player"))
             {
@@ -41,14 +61,6 @@ public class MilitaryTankController : MonoBehaviour
                 StartCoroutine(ShootRocket());
             }
         }
-        //Debug.DrawRay(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F, Color.red);
-    }
-
-    public void MoveToTarget()
-    {
-        var playerPos = Player.transform.position;
-        NavAgent.speed = GetComponent<Mob>().Speed;
-        NavAgent.SetDestination(playerPos);
     }
 
     IEnumerator ShootRocket()
