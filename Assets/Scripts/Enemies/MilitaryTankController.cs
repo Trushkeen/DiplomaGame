@@ -88,7 +88,9 @@ public class MilitaryTankController : MonoBehaviour
     {
         Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y - 1, Player.transform.position.z);
         //there also an error: tank facing backwards because of wrong rotation in blender
-        Tower.transform.rotation = Quaternion.RotateTowards(Tower.transform.rotation, Player.transform.rotation, 1F);
+        //when new model will be ready, replace targeting method with commented
+        Tower.transform.LookAt(targetPos);
+        //Tower.transform.rotation = Quaternion.RotateTowards(Tower.transform.rotation, Player.transform.rotation, 1F);
     }
 
     void TryToShootRocketInPlayer()
@@ -118,7 +120,7 @@ public class MilitaryTankController : MonoBehaviour
                 for (int i = 0; i < BulletPoints.Length; i++)
                 {
                     BulletPointsAudioEmitters[i].Play();
-                    Debug.DrawRay(BulletPoints[i].transform.position, -BulletPoints[i].transform.forward * 300F, Color.red);
+                    //Debug.DrawRay(BulletPoints[i].transform.position, -BulletPoints[i].transform.forward * 300F, Color.red);
                     if (Physics.Raycast(BulletPoints[i].transform.position, -BulletPoints[i].transform.forward * 300F,
                         out RaycastHit bulletHit, 300F))
                     {
