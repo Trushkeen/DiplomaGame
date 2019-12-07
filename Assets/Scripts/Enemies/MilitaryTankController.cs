@@ -22,13 +22,16 @@ public class MilitaryTankController : MonoBehaviour
         StartCoroutine(ShootRocket());
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         MoveToTarget();
         RotateTowerToPlayer();
         TryToShootRocketInPlayer();
+    }
 
-        //Debug.DrawRay(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F, Color.red);
+    void Update()
+    {
+
     }
 
     public void MoveToTarget()
@@ -47,11 +50,11 @@ public class MilitaryTankController : MonoBehaviour
 
     void TryToShootRocketInPlayer()
     {
-        if (AbleToShootRocket &&
-        Vector3.Distance(transform.position, Player.transform.position) >= 1 &&
-        //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
-        Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
-        out RaycastHit hit, 200F))
+        if (AbleToShootRocket
+            && Vector3.Distance(transform.position, Player.transform.position) >= 1
+            //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
+            && Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
+            out RaycastHit hit, 200F))
         {
             if (hit.transform.gameObject.CompareTag("Player"))
             {
