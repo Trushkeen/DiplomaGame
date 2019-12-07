@@ -21,7 +21,7 @@ public class RocketBehaviour : MonoBehaviour
         if (objectHit.CompareTag("Player"))
         {
             var stats = objectHit.GetComponent<PlayerStats>();
-            stats.HP -= 60;
+            stats.DiscardHP(60);
         }
     }
 }

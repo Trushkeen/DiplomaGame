@@ -34,7 +34,8 @@ public class MilitaryTankController : MonoBehaviour
     {
         NavAgent = GetComponent<NavMeshAgent>();
         Player = FindObjectOfType<PlayerMovement>().gameObject;
-        TankShellAudioEmitter = GetComponent<AudioSource>();
+        TankShellAudioEmitter = TankShellPoint.GetComponent<AudioSource>();
+        TankShellAudioEmitter.clip = RocketSound;
         foreach (var i in BulletPoints)
         {
             BulletPointsAudioEmitters.Add(i.GetComponent<AudioSource>());
@@ -101,6 +102,7 @@ public class MilitaryTankController : MonoBehaviour
             var hit = CheckPlayerTargeted();
             if (hit.transform.gameObject.CompareTag("Player"))
             {
+                TankShellAudioEmitter.Play();
                 var obj = Instantiate(TankShell);
                 obj.transform.position = TankShellPoint.transform.position;
                 obj.transform.rotation = TankShellPoint.transform.rotation;
@@ -126,7 +128,7 @@ public class MilitaryTankController : MonoBehaviour
                     {
                         if (bulletHit.transform.gameObject.CompareTag("Player"))
                         {
-                            bulletHit.transform.gameObject.GetComponent<PlayerStats>().HP -= 1F;
+                            bulletHit.transform.gameObject.GetComponent<PlayerStats>().DiscardHP(1F);
                         }
                     }
                 }
