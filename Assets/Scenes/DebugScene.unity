@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 930452510}
   m_Layer: 0
   m_Name: Terrain (with NavMesh)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 1347681292}
   m_Layer: 0
   m_Name: Terrain_(-100.0, 0.0, 0.0)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 2079936440}
   m_Layer: 0
   m_Name: Terrain_(-100.0, 0.0, 100.0)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 2119157839}
   m_Layer: 0
   m_Name: Terrain_(0.0, 0.0, 100.0)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1858,6 +1858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 159412611918184493, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4857c292809737d40a0d75702f08696b, type: 3}

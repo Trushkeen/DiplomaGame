@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         Rigid = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         SprintEnabled = Input.GetKey(KeyCode.LeftShift);
 
