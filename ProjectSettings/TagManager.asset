@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - PlayerWeapon
   - SpawnMob
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,13 +8,16 @@ public class MilitaryTankController : MonoBehaviour
 {
     public GameObject TankShell;
     public GameObject TankShellPoint;
-    public float ShotDelay;
+    public float ShotDelayRocket;
+    public float ShotDelayBullet;
 
     public GameObject Tower;
 
     private NavMeshAgent NavAgent;
     private GameObject Player;
     private bool AbleToShootRocket;
+    private bool AbleToShootBullets;
+    private bool PlayerVisible = false;
 
     void Start()
     {
@@ -25,13 +29,32 @@ public class MilitaryTankController : MonoBehaviour
     private void FixedUpdate()
     {
         MoveToTarget();
-        RotateTowerToPlayer();
-        TryToShootRocketInPlayer();
+        CheckPlayerTargeted();
+        RotateTowerTowardsPlayer();
+        if (PlayerVisible)
+        {
+            TryToShootRocketInPlayer();
+        }
+
+    }
+
+    private RaycastHit CheckPlayerTargeted()
+    {
+        //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
+        if (Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
+            out RaycastHit hit, 200F))
+        {
+            PlayerVisible = true;
+        }
+        else
+        {
+            PlayerVisible = false;
+        }
+        return hit;
     }
 
     void Update()
     {
-
     }
 
     public void MoveToTarget()
@@ -41,8 +64,8 @@ public class MilitaryTankController : MonoBehaviour
         NavAgent.SetDestination(playerPos);
     }
 
-    // should be remade to face nearest player (calculate distance)
-    void RotateTowerToPlayer()
+    //TODO: should be remade to face nearest player (calculate distance)
+    void RotateTowerTowardsPlayer()
     {
         Vector3 targetPos = new Vector3(Player.transform.position.x, transform.position.y - 1, Player.transform.position.z);
         Tower.transform.LookAt(targetPos);
@@ -51,11 +74,9 @@ public class MilitaryTankController : MonoBehaviour
     void TryToShootRocketInPlayer()
     {
         if (AbleToShootRocket
-            && Vector3.Distance(transform.position, Player.transform.position) >= 1
-            //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
-            && Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
-            out RaycastHit hit, 200F))
+            && Vector3.Distance(transform.position, Player.transform.position) >= 1)
         {
+            var hit = CheckPlayerTargeted();
             if (hit.transform.gameObject.CompareTag("Player"))
             {
                 var obj = Instantiate(TankShell);
@@ -69,7 +90,14 @@ public class MilitaryTankController : MonoBehaviour
     IEnumerator ShootRocket()
     {
         AbleToShootRocket = false;
-        yield return new WaitForSeconds(ShotDelay);
+        yield return new WaitForSeconds(ShotDelayRocket);
         AbleToShootRocket = true;
+    }
+
+    IEnumerator ShootBullet()
+    {
+        AbleToShootBullets = false;
+        yield return new WaitForSeconds(ShotDelayBullet);
+        AbleToShootBullets = true;
     }
 }
