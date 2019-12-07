@@ -11,7 +11,7 @@ public class TankController : MonoBehaviour, IMobActions
     {
         if (obj.CompareTag("Player"))
         {
-            obj.GetComponent<PlayerStats>().HP -= 20F;
+            obj.GetComponent<PlayerStats>().DiscardHP(20F);
             obj.GetComponent<Rigidbody>().AddForce(transform.up * 300F + transform.forward * 300F, ForceMode.Acceleration);
         }
     }
