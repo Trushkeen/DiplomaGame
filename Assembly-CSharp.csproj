@@ -74,7 +74,9 @@
     <Compile Include="Assets\Scripts\GameStartEvents.cs" />
     <Compile Include="Assets\Scripts\Localization\Locale.cs" />
     <Compile Include="Assets\Scripts\Localization\LocalizedText.cs" />
+    <Compile Include="Assets\Scripts\LoginScreenControl.cs" />
     <Compile Include="Assets\Scripts\MouseMove.cs" />
+    <Compile Include="Assets\Scripts\OnlineUser.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayersManager.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
