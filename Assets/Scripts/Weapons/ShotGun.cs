@@ -23,7 +23,7 @@ public class ShotGun : MonoBehaviour
 
     public void Reload()
     {
-        AnimController.SetBool("Reload", false);
+        AnimController.SetBool("Reloading", false);
         if (WB.AmmoTotal >= WB.AmmoClip)
         {
             WB.AmmoTotal += WB.AmmoNow;
@@ -70,14 +70,14 @@ public class ShotGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0)&&AnimController.GetBool("Reload") == false)
+        if (Input.GetMouseButton(0)&&AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reload") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal !=0)
+        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal !=0)
         {
             //Reload();
-            AnimController.SetBool("Reload", true);
+            AnimController.SetBool("Reloading", true);
         }
     }
     IEnumerator ShootingCooldown()

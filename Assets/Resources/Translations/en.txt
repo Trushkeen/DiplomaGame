@@ -1,3 +1,6 @@
 -startdebuglvl=Start Debug Level
 -settings=Settings
 -exit=Exit
+-auth=Authenticate
+-login=Login
+-password=Password

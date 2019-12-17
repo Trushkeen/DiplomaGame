@@ -6,6 +6,7 @@ using UnityEngine;
 public static class Locale
 {
     public static string Language { get; private set; } = "ru";
+    public static bool LocaleLoaded = false;
     private static Dictionary<string, string> CurrentLocale;
 
     public static void LoadLocale()
@@ -18,6 +19,7 @@ public static class Locale
             if (str[0].Length > 2)
                 CurrentLocale.Add(str[0].Replace("=", ""), str[1].Replace("-", ""));
         }
+        LocaleLoaded = true;
     }
 
     public static void ChangeLanguage(string lng)

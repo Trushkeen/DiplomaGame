@@ -1,3 +1,6 @@
 -startdebuglvl=Запустить отл. уровень
 -settings=Настройки
 -exit=Выход
+-auth=Войти
+-login=Имя пользователя
+-password=Пароль
