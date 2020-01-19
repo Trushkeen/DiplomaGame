@@ -14,12 +14,8 @@ public class LoginScreenControl : MonoBehaviour
         
     }
 
-    public void LoadToMainMenu()
+    public void ProceedAuth()
     {
-        OnlineUser.Login(LoginText.text, PasswordText.text);
-        if (OnlineUser.LoggedIn)
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        Auth.ConfirmUserData(LoginText.text, PasswordText.text);
     }
 }
