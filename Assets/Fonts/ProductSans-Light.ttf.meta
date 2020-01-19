@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7ae83282b8c34384f8e404e49c3e7f0d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Product Sans Light
+  fontNames:
+  - Product Sans Light
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 34d4ee1acda97e542922a2fdb6751077, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
