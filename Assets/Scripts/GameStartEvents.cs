@@ -5,19 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameStartEvents : MonoBehaviour
 {
+    private bool DevelopMode = false;
+
     private void Start()
     {
         if (!Locale.LocaleLoaded)
         {
             Locale.LoadLocale();
         }
-        if (OnlineUser.LoggedIn)
+
+        if (Auth.Authorized && !DevelopMode)
         {
             //do something
         }
-        else
+        else if (!DevelopMode)
         {
-            OnlineUser.LoadLoginScreen();
+            Auth.LoadLoginScreen();
         }
     }
 }

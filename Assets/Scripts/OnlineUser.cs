@@ -1,35 +1,47 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class OnlineUser
+//{"id":10001,"Email":"test@gmail.com","Amount":6.90,"Blocked":0,"RegDate":"2019-12-17T09:32:51.05"}
+
+public class OnlineUser
 {
-    private static string Token;
+    public int Id { get; private set; }
+    public string Email { get; private set; }
+    public float Balance { get; set; }
+    public bool Blocked { get; private set; }
+    public DateTime RegDate { get; private set; }
 
-    //change value of this field to false to skip auth
-    public static bool LoggedIn { get; private set; } = false;
-
-    public static void LoadLoginScreen()
+    public void ParseJsonUserString(string json)
     {
-        SceneManager.LoadScene("LoginScreen");
+        int fIndex = 0, symbols = 0;
+        json = json.Trim('{').Trim('}').Trim('"').Trim(':') + ',';
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
+        Id = int.Parse(json.Substring(fIndex, symbols));
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
+        Email = json.Substring(fIndex, symbols);
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
+        Balance = float.Parse(json.Substring(fIndex, symbols), CultureInfo.InvariantCulture);
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
+        Blocked = json.Substring(fIndex, symbols) == "0" ? false : true;
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
     }
 
-    public static void ReturnToMenu()
+    private void DetectIndices(ref string str, ref int fIndex, ref int symbols, char first, char second)
     {
-        SceneManager.LoadScene("MainMenu");
+        fIndex = str.IndexOf(first) + 1;
+        symbols = str.IndexOf(second) - fIndex;
     }
 
-    //TODO: make auth with connection to the server
-    public static void Login(string token)
+    public override string ToString()
     {
-        LoggedIn = true;
-        ReturnToMenu();
-    }
-
-    public static void Login(string login, string password)
-    {
-        LoggedIn = true;
-        ReturnToMenu();
+        return $"Player {Id}: {Email}, balance: {Balance}";
     }
 }
