@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,21 +19,29 @@ public class OnlineUser
     {
         int fIndex = 0, symbols = 0;
         json = json.Trim('{').Trim('}').Trim('"').Trim(':') + ',';
-        DetectIndices(json, ref fIndex, ref symbols, ':', ',');
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
         Id = int.Parse(json.Substring(fIndex, symbols));
-        DetectIndices(json, ref fIndex, ref symbols, ':', ',');
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
         Email = json.Substring(fIndex, symbols);
-        DetectIndices(json, ref fIndex, ref symbols, ':', ',');
-        Balance = float.Parse(json.Substring(fIndex, symbols));
-        DetectIndices(json, ref fIndex, ref symbols, ':', ',');
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
+        Balance = float.Parse(json.Substring(fIndex, symbols), CultureInfo.InvariantCulture);
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
         Blocked = json.Substring(fIndex, symbols) == "0" ? false : true;
-        DetectIndices(json, ref fIndex, ref symbols, ':', ',');
-        RegDate = DateTime.Parse(json.Substring(fIndex, symbols));
+        json = json.Remove(0, json.IndexOf(',') + 1);
+        DetectIndices(ref json, ref fIndex, ref symbols, ':', ',');
     }
 
-    private void DetectIndices(string str, ref int fIndex, ref int symbols, char first, char second)
+    private void DetectIndices(ref string str, ref int fIndex, ref int symbols, char first, char second)
     {
         fIndex = str.IndexOf(first) + 1;
         symbols = str.IndexOf(second) - fIndex;
+    }
+
+    public override string ToString()
+    {
+        return $"Player {Id}: {Email}, balance: {Balance}";
     }
 }

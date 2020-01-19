@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class Auth : MonoBehaviour
 {
     public static bool Authorized = false;
-    public static OnlineUser user;
+    public static OnlineUser ThisUser;
 
     private static string Email;
     private static string Password;
@@ -32,7 +32,7 @@ public class Auth : MonoBehaviour
 
     private static void AuthUser()
     {
-        req = new UnityWebRequest(@"https://mplace.azurewebsites.net/api/v1/login?email=" + Email
+        req = UnityWebRequest.Get(@"https://mplace.azurewebsites.net/api/v1/login?email=" + Email
             + "&password=" + Password + "&code=" + Code);
         var response = req.SendWebRequest();
         response.completed += OnRequestCompleted;
@@ -43,9 +43,8 @@ public class Auth : MonoBehaviour
         if (req.responseCode == 200)
         {
             Authorized = true;
-            user = new OnlineUser();
-            user.ParseJsonUserString(req.downloadHandler.text);
-            print(user.ToString());
+            ThisUser = new OnlineUser();
+            ThisUser.ParseJsonUserString(req.downloadHandler.text);
             SceneManager.LoadScene("MainMenu");
         }
         else if (req.responseCode == 400)
