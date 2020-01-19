@@ -210,7 +210,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 0
-  backgroundColorHDR: {r: 0.1882353, g: 0.023529412, b: 0.06827119, a: 0}
+  backgroundColorHDR: {r: 0.01690993, g: 0.315334, b: 0.7169812, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -1254,6 +1254,7 @@ GameObject:
   - component: {fileID: 1328843938}
   - component: {fileID: 1328843939}
   - component: {fileID: 1328843937}
+  - component: {fileID: 1328843940}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -1332,7 +1333,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1411,6 +1412,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DictionaryKey: login
+--- !u!132 &1328843940
+GUIText:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328843935}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: acaaf061473bd064d9f39718a1061517, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1489599868
 GameObject:
   m_ObjectHideFlags: 0
