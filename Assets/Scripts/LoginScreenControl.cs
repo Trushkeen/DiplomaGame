@@ -21,10 +21,15 @@ public class LoginScreenControl : MonoBehaviour
         try
         {
             Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+
         }
         catch (ArgumentException) 
         {
             ErrorLogData.SetActive(true);
         }
+    }
+    public void CreateAccount()
+    {
+        System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
     }
 }
