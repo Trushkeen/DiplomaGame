@@ -4,3 +4,5 @@
 -auth=Authenticate
 -login=Login
 -password=Password
+-wrongauthdata=Error!!! Invalid data entered!!!
+-createacc=Create account

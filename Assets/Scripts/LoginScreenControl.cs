@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class LoginScreenControl : MonoBehaviour
 {
     public TextMeshProUGUI LoginText;
     public TextMeshProUGUI PasswordText;
+    public GameObject ErrorLogData;
 
     void Start()
     {
@@ -16,6 +18,18 @@ public class LoginScreenControl : MonoBehaviour
 
     public void ProceedAuth()
     {
-        Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+        try
+        {
+            Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+
+        }
+        catch (ArgumentException) 
+        {
+            ErrorLogData.SetActive(true);
+        }
+    }
+    public void CreateAccount()
+    {
+        System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
     }
 }
