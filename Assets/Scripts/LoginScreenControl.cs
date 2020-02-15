@@ -9,13 +9,16 @@ public class LoginScreenControl : MonoBehaviour
     public TextMeshProUGUI LoginText;
     public TextMeshProUGUI PasswordText;
 
-    void Start()
-    {
-        
-    }
-
     public void ProceedAuth()
     {
-        Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+        if (!Auth.IsLoggingNow)
+        {
+            Auth.IsLoggingNow = true;
+            Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+        }
+        else
+        {
+            print("Client already connecting, wait...");
+        }
     }
 }
