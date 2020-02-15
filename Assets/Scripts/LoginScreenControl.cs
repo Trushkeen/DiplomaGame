@@ -11,17 +11,19 @@ public class LoginScreenControl : MonoBehaviour
     public TextMeshProUGUI PasswordText;
     public GameObject ErrorLogData;
 
-    void Start()
-    {
-        
-    }
-
     public void ProceedAuth()
     {
         try
         {
+            if (!Auth.IsLoggingNow)
+            {
+            Auth.IsLoggingNow = true;
             Auth.ConfirmUserData(LoginText.text, PasswordText.text);
-
+            }
+            else
+            {
+            print("Client already connecting, wait...");
+            }
         }
         catch (ArgumentException) 
         {
@@ -31,5 +33,6 @@ public class LoginScreenControl : MonoBehaviour
     public void CreateAccount()
     {
         System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
+
     }
 }
