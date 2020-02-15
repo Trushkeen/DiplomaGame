@@ -41,13 +41,13 @@ public class Auth : MonoBehaviour
 
     private static void OnRequestCompleted(AsyncOperation obj)
     {
+        IsLoggingNow = false;
         switch (AuthRequest.responseCode)
         {
             case 200:
                 Authorized = true;
                 ThisUser = new OnlineUser();
                 ThisUser.ParseJsonUserString(AuthRequest.downloadHandler.text);
-                IsLoggingNow = false;
                 SceneManager.LoadScene("MainMenu");
                 break;
             case 400: print("User not found");
@@ -57,7 +57,6 @@ public class Auth : MonoBehaviour
             default: print(AuthRequest.responseCode + ": troubles with connection");
                 break;
         }
-        IsLoggingNow = false;
     }
 
     public static void LoadLoginScreen()
