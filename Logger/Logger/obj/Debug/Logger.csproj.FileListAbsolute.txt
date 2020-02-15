@@ -1,0 +1,9 @@
+F:\DiplomaGame\Logger\Logger\bin\Debug\Logger.exe.config
+F:\DiplomaGame\Logger\Logger\bin\Debug\Logger.exe
+F:\DiplomaGame\Logger\Logger\bin\Debug\Logger.pdb
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.csprojAssemblyReference.cache
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.Form1.resources
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.Properties.Resources.resources
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.csproj.GenerateResource.cache
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.exe
+F:\DiplomaGame\Logger\Logger\obj\Debug\Logger.pdb

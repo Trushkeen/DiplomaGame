@@ -1,0 +1,3 @@
+Developer: Andrey Trushkeen, Date: 15.02.2020, 13:56
+>>>Log: Логгер создан
+
