@@ -72,11 +72,11 @@ public class ShotGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
+        if (Input.GetKey(Controls.FireBtn) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal != 0)
+        if (Input.GetKeyDown(Controls.ReloadBtn) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal != 0)
         {
             //Reload();
             AnimController.SetBool("Reloading", true);
