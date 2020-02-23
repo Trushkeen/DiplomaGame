@@ -574,7 +574,17 @@ PrefabInstance:
       propertyPath: m_RenderingPathCustomFrameSettings.bitDatas.data1
       value: 68906302766941
       objectReference: {fileID: 0}
+    - target: {fileID: 1714369618719717998, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5482910289414847471, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151709953968131332, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
