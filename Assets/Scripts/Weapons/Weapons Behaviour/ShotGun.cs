@@ -45,13 +45,14 @@ public class ShotGun : MonoBehaviour
 
     public void Shoot()
     {
-       
-        if (AbleToShoot && WB.AmmoNow !=0) {
+        if (AbleToShoot && WB.AmmoNow != 0)
+        {
             Emitter.PlayShot();
 
-            for (int Bull = 0; Bull < 8; Bull++) {
-
-                Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward * 100f, Color.red);
+            for (int bullet = 0; bullet < 8; bullet++)
+            {
+                //TODO: shotgun doesn't have a dispersion
+                Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward * 100f, Color.red, 1F);
 
                 if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward * Random.Range(0.1F, 0.9F), out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
                 {
@@ -60,21 +61,22 @@ public class ShotGun : MonoBehaviour
                     {
                         go.GetComponent<Mob>().HP -= WB.Damage;
                     }
-                    Bull++;
+                    bullet++;
                 }
             }
             WB.AmmoNow--;
+            MouseMove.ShakeCamera();
             StartCoroutine(ShootingCooldown());
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0)&&AnimController.GetBool("Reloading") == false)
+        if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R)&& AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal !=0)
+        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip && WB.AmmoTotal != 0)
         {
             //Reload();
             AnimController.SetBool("Reloading", true);
