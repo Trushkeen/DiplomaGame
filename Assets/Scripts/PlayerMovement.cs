@@ -17,24 +17,24 @@ public class PlayerMovement : MonoBehaviour
     {
         SprintEnabled = Input.GetKey(KeyCode.LeftShift);
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(Controls.ForwardBtn))
         {
             transform.position += transform.forward * (SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(Controls.BackwardBtn))
         {
             transform.position += transform.forward * -Speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(Controls.RightBtn))
         {
             transform.position += transform.right * (SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(Controls.LeftBtn))
         {
             transform.position += transform.right * -(SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(Controls.JumpBtn))
         {
             if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
             {

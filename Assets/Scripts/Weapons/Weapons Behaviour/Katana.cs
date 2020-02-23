@@ -27,11 +27,11 @@ public class Katana : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(Controls.FireBtn))
         {
             AnimController.SetBool("Attack", true);
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetKeyUp(Controls.FireBtn))
         {
             AnimController.SetBool("Attack", false);
         }

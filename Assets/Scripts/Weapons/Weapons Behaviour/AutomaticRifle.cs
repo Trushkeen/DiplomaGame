@@ -62,11 +62,11 @@ public class AutomaticRifle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && AnimController.GetBool("Reloading") == false)
+        if (Input.GetKeyDown(Controls.FireBtn) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip)
+        if (Input.GetKeyDown(Controls.ReloadBtn) && AnimController.GetBool("Reloading") == false && WB.AmmoNow != WB.AmmoClip)
         {
             //Reload();
             AnimController.SetBool("Reloading", true);
