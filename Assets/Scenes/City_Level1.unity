@@ -428,6 +428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2258222146902185952, guid: 5a1a892efefe29b41961fc79d630ffe8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6011495354146678279, guid: 5a1a892efefe29b41961fc79d630ffe8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,11 +620,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 62466978899997740, guid: 4857c292809737d40a0d75702f08696b,
-        type: 3}
-      propertyPath: Damage
-      value: 228
-      objectReference: {fileID: 0}
     - target: {fileID: 159412611918184470, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_Name
