@@ -62,7 +62,7 @@ public class AutomaticRifle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(Controls.FireBtn) && AnimController.GetBool("Reloading") == false)
+        if (Input.GetKey(Controls.FireBtn) && AnimController.GetBool("Reloading") == false)
         {
             Shoot();
         }

@@ -10,34 +10,54 @@ public class WeaponSwitcher : MonoBehaviour
     public GameObject SecondaryWeapon;
     public GameObject MeleeWeapon;
 
+    private GameObject CurrentWeapon;
+    private GameObject PreviousWeapon;
+
+    private void Start()
+    {
+        CurrentWeapon = PrimaryWeapon;
+        DisableAllWeapons();
+        CurrentWeapon.SetActive(true);
+    }
+
     //TODO: animations
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKeyUp(Controls.PreviousWeapon) && PreviousWeapon != null)
         {
-            DisableAllWeapons();
-            PrimaryWeapon.SetActive(true);
-            PrimaryWeapon.GetComponent<Animator>().Play("Idle");
-
+            CurrentWeapon.SetActive(false);
+            PreviousWeapon.SetActive(true);
+            GameObject temp = PreviousWeapon;
+            PreviousWeapon = CurrentWeapon;
+            CurrentWeapon = temp;
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+
+        if (Input.GetKey(Controls.PrimaryWeaponBtn) && CurrentWeapon != PrimaryWeapon)
         {
-            DisableAllWeapons();
-            SecondaryWeapon.SetActive(true);
-            SecondaryWeapon.GetComponent<Animator>().Play("Idle");
-
+            SwitchWeapons(PrimaryWeapon);
         }
-        else if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKey(Controls.SecondaryWeaponBtn) && CurrentWeapon != SecondaryWeapon)
         {
-            DisableAllWeapons();
-            MeleeWeapon.SetActive(true);
-            MeleeWeapon.GetComponent<Animator>().Play("Idle");
-
+            SwitchWeapons(SecondaryWeapon);
         }
+        else if (Input.GetKey(Controls.MeleeWeaponBtn) && CurrentWeapon != MeleeWeapon)
+        {
+            SwitchWeapons(MeleeWeapon);
+        }
+    }
+
+    private void SwitchWeapons(GameObject sender)
+    {
+        PreviousWeapon = CurrentWeapon;
+        CurrentWeapon.SetActive(false);
+        sender.SetActive(true);
+        sender.GetComponent<Animator>().Play("Idle");
+        CurrentWeapon = sender;
     }
 
     private void DisableAllWeapons()
     {
+        CurrentWeapon.SetActive(false);
         PrimaryWeapon.SetActive(false);
         SecondaryWeapon.SetActive(false);
         MeleeWeapon.SetActive(false);
