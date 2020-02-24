@@ -64,7 +64,7 @@ public class MilitaryTankController : MonoBehaviour
 
     private RaycastHit CheckPlayerTargeted()
     {
-        //ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
+        //TODO: ATTENTION! Minus value because of model wrong facing. Fix when normal model will be available.
         if (Physics.Raycast(TankShellPoint.transform.position, -TankShellPoint.transform.forward * 200F,
             out RaycastHit hit, 200F))
         {

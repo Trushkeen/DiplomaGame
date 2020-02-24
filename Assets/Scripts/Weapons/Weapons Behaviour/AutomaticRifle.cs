@@ -48,10 +48,15 @@ public class AutomaticRifle : MonoBehaviour
             Emitter.PlayShot();
             if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
+                Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward, Color.red, 1f);
                 var go = hit.collider.gameObject;
+                while (go.transform.parent != null)
+                {
+                    go = go.transform.parent.gameObject;
+                }
                 if (go.CompareTag("Enemy"))
                 {
-                    go.GetComponent<Mob>().HP -= WB.Damage;
+                    go.GetComponent<Mob>().DealDamage(WB.Damage);
                 }
             }
             MouseMove.ShakeCamera();

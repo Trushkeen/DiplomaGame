@@ -57,9 +57,13 @@ public class ShotGun : MonoBehaviour
                 if (Physics.Raycast(BulletPoint.transform.position, BulletPoint.transform.forward * Random.Range(0.1F, 0.9F), out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
                 {
                     var go = hit.collider.gameObject;
+                    while (go.transform.parent != null)
+                    {
+                        go = go.transform.parent.gameObject;
+                    }
                     if (go.CompareTag("Enemy"))
                     {
-                        go.GetComponent<Mob>().HP -= WB.Damage;
+                        go.GetComponent<Mob>().DealDamage(WB.Damage);
                     }
                     bullet++;
                 }
