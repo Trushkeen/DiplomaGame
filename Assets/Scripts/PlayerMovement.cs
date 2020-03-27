@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float Speed = 5F;
+    private float Speed = 25F;
     private Rigidbody Rigid;
     private bool SprintEnabled;
 
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(Controls.JumpBtn))
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 6F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
             {
                 Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
             }

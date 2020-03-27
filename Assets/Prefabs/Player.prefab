@@ -270,6 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159412612775295653}
+  - component: {fileID: 7632126079159399213}
   - component: {fileID: 159412612775295650}
   - component: {fileID: 159412612775295648}
   - component: {fileID: 159412612775295651}
@@ -298,6 +299,15 @@ Transform:
   m_Father: {fileID: 159412611918184490}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &7632126079159399213
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159412612775295649}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 51b74d7bad397457d883c5940f7664d8, type: 2}
 --- !u!20 &159412612775295650
 Camera:
   m_ObjectHideFlags: 0
