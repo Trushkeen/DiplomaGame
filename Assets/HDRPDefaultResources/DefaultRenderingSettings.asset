@@ -140,7 +140,7 @@ MonoBehaviour:
     m_Value: 10
   anisotropy:
     m_OverrideState: 1
-    m_Value: 0.65
+    m_Value: 1
     min: -1
     max: 1
   globalLightProbeDimmer:
@@ -219,7 +219,7 @@ MonoBehaviour:
     m_Value: 1
   skyAmbientMode:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -354,24 +354,24 @@ MonoBehaviour:
     max: 360
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   exposure:
     m_OverrideState: 0
     m_Value: 0
   multiplier:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 10
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 0.06370739
+    m_Value: 0.06370764
     min: 0
   upperHemisphereLuxColor:
     m_OverrideState: 0
-    m_Value: {x: 0.20813093, y: 0.31080434, z: 0.5}
+    m_Value: {x: 0.20813084, y: 0.31080377, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 6
   updateMode:
     m_OverrideState: 1
     m_Value: 0
