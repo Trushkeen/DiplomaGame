@@ -10,7 +10,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartDebugLevel()
     {
-        SceneManager.LoadScene("DebugScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("City_Level1", LoadSceneMode.Single);
     }
 
     public void OpenSettings()
