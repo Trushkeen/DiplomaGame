@@ -8,6 +8,7 @@ TagManager:
   - PlayerWeapon
   - SpawnMob
   - Terrain
+  - Loot
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - Enemies
   - Ground
-  - 
+  - Loot
   - 
   - 
   - 

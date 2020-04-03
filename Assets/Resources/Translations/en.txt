@@ -6,3 +6,7 @@
 -password=Password
 -wrongauthdata=Error!!! Invalid data entered!!!
 -createacc=Create account
+-presstopickup=[E] to pick up 
+-bowl=Bowl
+-candle=Candle
+-cost=Cost

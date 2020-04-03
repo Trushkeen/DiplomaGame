@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LootableObjects\Loot.cs" />
+    <Compile Include="Assets\LootableObjects\LootableItem.cs" />
     <Compile Include="Assets\Scripts\Auth.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Scripts\Debug\DebugInfoBuilder.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameStartEvents.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\ItemInteraction.cs" />
     <Compile Include="Assets\Scripts\Localization\Locale.cs" />
     <Compile Include="Assets\Scripts\Localization\LocalizedText.cs" />
     <Compile Include="Assets\Scripts\LoginScreenControl.cs" />

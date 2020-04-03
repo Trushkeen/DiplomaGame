@@ -6,3 +6,7 @@
 -password=Пароль
 -wrongauthdata=Ошибка!!! Введены неверные данные!!!
 -createacc=Создать аккаунт
+-presstopickup=[E] поднять 
+-bowl=Тарелка
+-candle=Свеча
+-cost=Стоимость

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static WeaponBase[] DisabledWeapons;
+    public static WeaponBase[] DisabledWeapons;
 
     public static void DisableActiveWeapons()
     {

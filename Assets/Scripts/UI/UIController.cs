@@ -18,14 +18,17 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        UpdateHPText();
-        UpdateAmmoText();
+        if (GameManager.DisabledWeapons == null)
+        {
+            UpdateHPText();
+            UpdateAmmoText();
+        }
     }
 
     void UpdateHPText()
     {
-        var playerStats = PlayerCamera.transform.root.gameObject.GetComponent<PlayerStats>();
-        HPText.text = "HP: " + playerStats.HP;
+            var playerStats = PlayerCamera.transform.root.gameObject.GetComponent<PlayerStats>();
+            HPText.text = "HP: " + playerStats.HP;
     }
 
     void UpdateAmmoText()
