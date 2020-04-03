@@ -18,10 +18,6 @@ public class InventorySlot : MonoBehaviour
 
     public void ClearSlot()
     {
-        Icon.enabled = false;
-        Name.enabled = false;
-        Item = null;
-        Icon.sprite = null;
-        Name.text = null;
+        Destroy(this.gameObject);
     }
 }

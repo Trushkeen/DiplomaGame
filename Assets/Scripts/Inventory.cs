@@ -32,12 +32,16 @@ public class Inventory : MonoBehaviour
                 InventoryUI.SetActive(true);
                 GameManager.DisableActiveWeapons();
                 MouseMove.Freeze();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
                 InventoryUI.SetActive(false);
                 GameManager.EnableDisabledWeapons();
                 MouseMove.Unfreeze();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }
