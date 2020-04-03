@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotGun : MonoBehaviour
+public class ShotGun : MonoBehaviour, IWeaponBase
 {
     private bool AbleToShoot = true;
 

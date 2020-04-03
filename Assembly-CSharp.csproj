@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Enemies\MilitaryTankController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mob.cs" />
     <Compile Include="Assets\Scripts\Enemies\TankController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameStartEvents.cs" />
     <Compile Include="Assets\Scripts\Localization\Locale.cs" />
     <Compile Include="Assets\Scripts\Localization\LocalizedText.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IWeaponBase.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBase.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponSoundController.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
