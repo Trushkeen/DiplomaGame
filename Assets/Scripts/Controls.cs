@@ -20,4 +20,7 @@ public static class Controls
     public static KeyCode PrimaryWeaponBtn { get; set; } = KeyCode.Alpha1;
     public static KeyCode SecondaryWeaponBtn { get; set; } = KeyCode.Alpha2;
     public static KeyCode MeleeWeaponBtn { get; set; } = KeyCode.Alpha3;
+
+    //Inventory
+    public static KeyCode AccessInventory { get; set; } = KeyCode.Tab;
 }
