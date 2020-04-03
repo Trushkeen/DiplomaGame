@@ -22,6 +22,19 @@ public class ItemInteraction : MonoBehaviour
             InteractionGO.SetActive(true);
             if (!Locale.LocaleLoaded) Locale.LoadLocale();
             InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                var go = hit.collider.gameObject;
+                var loot = go.GetComponent<LootableItem>().Loot;
+                if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
+                {
+                    var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
+                    var slot = cell.GetComponent<InventorySlot>();
+                    slot.AddItem(loot);
+                    Inventory.Instance.Items.Add(cell);
+                    Destroy(go);
+                }
+            }
         }
         else
         {

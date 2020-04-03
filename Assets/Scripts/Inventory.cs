@@ -6,7 +6,8 @@ public class Inventory : MonoBehaviour
 {
     public GameObject InventoryUI;
     public int Space = 12;
-    public List<GameObject> Cells;
+    public List<GameObject> Items = new List<GameObject>();
+    public GameObject BasicCell;
 
     #region Singleton
     public static Inventory Instance;
