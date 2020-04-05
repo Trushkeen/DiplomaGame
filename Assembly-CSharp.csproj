@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Enemies\IMobStats.cs" />
     <Compile Include="Assets\Scripts\Enemies\MilitaryTankController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mob.cs" />
+    <Compile Include="Assets\Scripts\Enemies\SpiderBehaviour.cs" />
     <Compile Include="Assets\Scripts\Enemies\TankController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameStartEvents.cs" />

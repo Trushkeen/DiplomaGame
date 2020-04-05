@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3606970599582198997}
   - component: {fileID: 7425510700689987937}
   - component: {fileID: 5068599496956415125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7652446044925909935}
   - component: {fileID: 543151152183234084}
   - component: {fileID: 1594765870798265575}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7130809173197819458}
   - component: {fileID: 4294373395177072354}
   - component: {fileID: 4677860207374522472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,9 +250,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1000803691097262977}
   - component: {fileID: 4303409893858507155}
-  m_Layer: 0
+  - component: {fileID: 705836325214870035}
+  - component: {fileID: 40149625999705788}
+  - component: {fileID: 4547099098960913761}
+  - component: {fileID: -3387092571282009979}
+  - component: {fileID: -1188432488152065995}
+  m_Layer: 10
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +297,93 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.5672607, y: 3.1641989, z: 5.744629}
   m_Center: {x: 0.049865723, y: 1.7671151, z: -0.22595215}
+--- !u!95 &705836325214870035
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303409893858507154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b6a2c16db5b10d4482fe26085e05500, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &40149625999705788
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303409893858507154}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 0.5
+  m_Speed: 20
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4547099098960913761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303409893858507154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a586a4add4e8d641a9893fcbbe08c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spider
+  HP: 100
+  Damage: 12
+  Speed: 20
+--- !u!114 &-3387092571282009979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303409893858507154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad33c744f4c0764fb4fdd421798eb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 0}
+  Mob: {fileID: 0}
+--- !u!54 &-1188432488152065995
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303409893858507154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: 10
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4564535171224315843
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +395,7 @@ GameObject:
   - component: {fileID: 355599190393811552}
   - component: {fileID: 4127396905709810786}
   - component: {fileID: 6541426732554236273}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +475,7 @@ GameObject:
   - component: {fileID: 2079056944409401816}
   - component: {fileID: 7854079003501201130}
   - component: {fileID: 336178228770214296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +555,7 @@ GameObject:
   - component: {fileID: 70552795550389039}
   - component: {fileID: 1944531474507602388}
   - component: {fileID: 2099414003758960164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +634,7 @@ GameObject:
   - component: {fileID: 2383762863279043567}
   - component: {fileID: 4315985532445862817}
   - component: {fileID: 3960004510336900639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7647314663468692130}
   m_LocalRotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.010773152, y: 2.0955143, z: 0.0020764018}
+  m_LocalPosition: {x: -0.01077314, y: 2.0955143, z: 0.0020764018}
   m_LocalScale: {x: 2.665769, y: 0.7455146, z: 0.34651083}
   m_Children: []
   m_Father: {fileID: 1000803691097262977}
@@ -622,7 +714,7 @@ GameObject:
   - component: {fileID: 1015705936621632783}
   - component: {fileID: 7944504209094011373}
   - component: {fileID: 2567885583379808813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}

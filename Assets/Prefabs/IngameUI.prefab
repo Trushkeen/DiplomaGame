@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 6903955244310977447}
   - component: {fileID: 6903955244310977446}
   - component: {fileID: 6903955244310977442}
+  - component: {fileID: 1611077957037636959}
   m_Layer: 5
   m_Name: IngameUI
   m_TagString: Untagged
@@ -798,6 +799,20 @@ MonoBehaviour:
   DebugText: {fileID: 6903955243107666583}
   HPText: {fileID: 6903955243338027376}
   AmmoText: {fileID: 6903955243744439332}
+--- !u!114 &1611077957037636959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903955244310977445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b16b695f52024f9e05a46f7ec20fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenuUI: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &9157010120188242666
 GameObject:
   m_ObjectHideFlags: 0
