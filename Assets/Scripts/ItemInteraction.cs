@@ -20,12 +20,13 @@ public class ItemInteraction : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(12 << 8), QueryTriggerInteraction.Ignore))
         {
             var go = hit.collider.gameObject;
+
+            InteractionGO.SetActive(true);
+
+            if (!Locale.LocaleLoaded) Locale.LoadLocale();
+
             if (go.tag == "Loot")
             {
-                InteractionGO.SetActive(true);
-
-                if (!Locale.LocaleLoaded) Locale.LoadLocale();
-
                 InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
@@ -37,6 +38,30 @@ public class ItemInteraction : MonoBehaviour
                         slot.AddItem(loot);
                         Inventory.Instance.Items.Add(cell);
                         Destroy(go);
+                    }
+                }
+            }
+            else if (go.tag == "VendingMachine")
+            {
+                InteractionGO.SetActive(true);
+
+                InteractionText.text = "[E] - " + Locale.Get("interact");
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    var inv = Inventory.Instance;
+                    if (!inv.InventoryUI.activeSelf)
+                    {
+                        inv.EnableInv();
+
+                        foreach (var cell in inv.Items)
+                        {
+                            cell.GetComponent<InventorySlot>().SellBtnParent.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        inv.DisableInv();
                     }
                 }
             }

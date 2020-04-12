@@ -9,6 +9,14 @@ public class InventorySlot : MonoBehaviour
     public Image Icon;
     public Text Name;
 
+    public Text SellBtnText;
+    public GameObject SellBtnParent;
+
+    private void Start()
+    {
+        SellBtnText.text = "$" + Item.Cost;
+    }
+
     public void AddItem(Loot item)
     {
         Item = item;
@@ -18,6 +26,14 @@ public class InventorySlot : MonoBehaviour
 
     public void ClearSlot()
     {
-        Destroy(this.gameObject);
+        Inventory.Instance.Items.Remove(gameObject);
+        Destroy(gameObject);
+    }
+
+    public void SellItem()
+    {
+        var stats = GameObject.FindObjectOfType<PlayerStats>();
+        stats.Balance += Item.Cost;
+        ClearSlot();
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - SpawnMob
   - Terrain
   - Loot
+  - VendingMachine
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Player
   - Enemies
   - Ground
-  - Loot
+  - Interactable
   - 
   - 
   - 

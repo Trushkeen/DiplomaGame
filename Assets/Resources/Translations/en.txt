@@ -10,3 +10,4 @@
 -bowl=Bowl
 -candle=Candle
 -cost=Cost
+-interact=Interact
