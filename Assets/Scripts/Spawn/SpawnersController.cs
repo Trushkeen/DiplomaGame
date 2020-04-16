@@ -22,8 +22,6 @@ public class SpawnersController : MonoBehaviour
 
     private void Update()
     {
-    
-
         foreach (var itemSpawn in SpawnersArray)
         {
             foreach (var itemPlayer in PlayerArray)

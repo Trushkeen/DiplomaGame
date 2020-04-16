@@ -241,6 +241,7 @@ MonoBehaviour:
   ID: 0
   Nickname: 
   Speed: 5
+  Balance: 0
 --- !u!114 &3208039869707004704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryUI: {fileID: 0}
+  BalanceText: {fileID: 0}
+  Space: 12
+  Items: []
+  BasicCell: {fileID: 912962703141858006, guid: 6fa44f3a2a234aa4e8af7403b692be9d,
+    type: 3}
 --- !u!195 &1169445871
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -511,6 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8469a2164f4673c49b4c8928fa06b671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryUI: {fileID: 0}
+  InteractionGO: {fileID: 0}
 --- !u!1 &4284478248046677349
 GameObject:
   m_ObjectHideFlags: 0

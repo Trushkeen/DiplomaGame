@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280957395046223524}
   - component: {fileID: 396204668571683516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -140,9 +141,9 @@ GameObject:
   - component: {fileID: 4897878798455109048}
   - component: {fileID: -1853123713475872364}
   - component: {fileID: 4458632973075853963}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TankRocket
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +186,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -244,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9154429583255323069}
   - component: {fileID: 7052001616616576356}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AreaDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

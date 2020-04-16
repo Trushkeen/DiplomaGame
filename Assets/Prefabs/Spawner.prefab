@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d9c2a7855110347a2255fe40bf563e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpawn: 5
+  MaxSpawn: 5
+  Delay: 10
   Enemies:
-  - {fileID: 7293094661688923156, guid: 5a1a892efefe29b41961fc79d630ffe8, type: 3}
+  - {fileID: 4303409893858507154, guid: 4ed44dbafd745e24e9d0996dbc13b035, type: 3}

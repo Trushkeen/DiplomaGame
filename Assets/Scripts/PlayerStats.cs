@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public delegate void OnHpChanged(); 
-
     public int ID;
     public string Nickname = string.Empty;
 
     public float HP { get; private set; } = 100;
     public float Speed = 5;
+
+    public float Balance = 0;
 
     private void Start()
     {
