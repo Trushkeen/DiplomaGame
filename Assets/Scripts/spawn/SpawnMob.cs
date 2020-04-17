@@ -5,35 +5,31 @@ using UnityEngine.AI;
 
 public class SpawnMob : MonoBehaviour
 {
-    GameObject obj;
     Vector3 SpawnVector;
-    public int maxSpawn = 5;
+    public int MaxSpawn;
+    public float Delay;
     private bool AbleToSpawn = true;
 
     public GameObject[] Enemies;
 
     private void Start()
     {
-        SpawnVector = new Vector3(transform.position.x, 26F, transform.position.z);
+        SpawnVector = gameObject.transform.position;
     }
 
     private void FixedUpdate()
     {
-        if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= maxSpawn)
+        if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= MaxSpawn)
         {
-            var obje = Instantiate(Enemies[0], SpawnVector,transform.rotation).transform.parent = null;
-            //obje.GetComponent<NavMeshAgent>().Warp(gameObject.transform.position);
-
-            StartCoroutine(SpawnCooldown());
+            var obj = Instantiate(original: Enemies[0], position: SpawnVector, rotation: transform.rotation);
         }
-
+        StartCoroutine(SpawnCooldown());
     }
 
     private IEnumerator SpawnCooldown()
     {
         AbleToSpawn = false;
-        yield return new WaitForSeconds(15.0F);
+        yield return new WaitForSeconds(Delay);
         AbleToSpawn = true;
-
     }
 }
