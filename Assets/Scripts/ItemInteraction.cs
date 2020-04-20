@@ -21,12 +21,12 @@ public class ItemInteraction : MonoBehaviour
         {
             var go = hit.collider.gameObject;
 
-            InteractionGO.SetActive(true);
-
             if (!Locale.LocaleLoaded) Locale.LoadLocale();
 
             if (go.tag == "Loot")
             {
+                InteractionGO.SetActive(true);
+
                 InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {

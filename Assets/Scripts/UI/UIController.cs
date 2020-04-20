@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
 
     void UpdateHPText()
     {
-        HPText.text = "HP: " + Stats.HP;
+        HPText.text = "HP: " + Stats.GetHP();
     }
 
     void UpdateAmmoText()

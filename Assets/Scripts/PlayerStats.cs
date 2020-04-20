@@ -8,7 +8,9 @@ public class PlayerStats : MonoBehaviour
     public int ID;
     public string Nickname = string.Empty;
 
-    public float HP { get; private set; } = 100;
+    [SerializeField]
+    private float HP = 100;
+
     public float Speed = 5;
 
     public float Balance = 0;
@@ -27,5 +29,10 @@ public class PlayerStats : MonoBehaviour
     public void AddHP(float value)
     {
         HP += value;
+    }
+
+    public float GetHP()
+    {
+        return HP;
     }
 }
