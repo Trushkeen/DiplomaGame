@@ -9882,11 +9882,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1629680784}
     m_Modifications:
-    - target: {fileID: -4216859302048453862, guid: 6bc769ef577c7904b8b3d42dd32edda3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 157
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c4d58625eda323847890517799cfb89c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9961,6 +9956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wood2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6bc769ef577c7904b8b3d42dd32edda3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 157
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc769ef577c7904b8b3d42dd32edda3, type: 3}
@@ -39240,11 +39240,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 853446585}
     m_Modifications:
-    - target: {fileID: -4216859302048453862, guid: 6bc769ef577c7904b8b3d42dd32edda3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1f5566fcd5c6d6c4498412c8eaaa4c23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39324,6 +39319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6bc769ef577c7904b8b3d42dd32edda3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc769ef577c7904b8b3d42dd32edda3, type: 3}

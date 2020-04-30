@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Katana.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\RocketBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\ShotGun.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\SniperRifle.cs" />
     <Compile Include="Assets\Skybox\AllSkyFree\AllSkyFree_Menu.cs" />
     <Compile Include="Assets\scri.cs" />
     <Compile Include="Assets\test.cs" />
