@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\PlayersManager.cs" />
+    <Compile Include="Assets\Scripts\RandomDelete.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnMob.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnersController.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
