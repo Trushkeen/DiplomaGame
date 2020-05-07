@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SniperRifle : MonoBehaviour, IWeaponBase
+public class Pistol : MonoBehaviour
 {
     public WeaponBase WB;
 
@@ -49,7 +49,7 @@ public class SniperRifle : MonoBehaviour, IWeaponBase
             if (Physics.Raycast(BulletPoint.transform.position, -BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
                 Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward * -100F, Color.red, 10f);
-                
+
                 var go = hit.collider.gameObject;
                 while (go.transform.parent != null)
                 {
@@ -82,7 +82,7 @@ public class SniperRifle : MonoBehaviour, IWeaponBase
     private IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(0.1F);
         AbleToShoot = true;
     }
 
