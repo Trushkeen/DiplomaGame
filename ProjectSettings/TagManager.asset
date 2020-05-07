@@ -10,6 +10,7 @@ TagManager:
   - Terrain
   - Loot
   - VendingMachine
+  - EscapeTrigger
   layers:
   - Default
   - TransparentFX
