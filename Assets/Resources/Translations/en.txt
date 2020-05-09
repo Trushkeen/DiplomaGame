@@ -11,3 +11,4 @@
 -candle=Candle
 -cost=Cost
 -interact=Interact
+-escape=Escape

@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\PlayersManager.cs" />
+    <Compile Include="Assets\Scripts\RandomDelete.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnMob.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnersController.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\AutomaticRifle.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Katana.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Pistol.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\RocketBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\SniperRifle.cs" />

@@ -17,7 +17,7 @@ public class ItemInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(12 << 8), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 10F, ~(12 << 8), QueryTriggerInteraction.Collide))
         {
             var go = hit.collider.gameObject;
 
@@ -63,6 +63,17 @@ public class ItemInteraction : MonoBehaviour
                     {
                         inv.DisableInv();
                     }
+                }
+            }
+            else if(go.tag == "EscapeTrigger")
+            {
+                InteractionGO.SetActive(true);
+
+                InteractionText.text = "[E] - " + Locale.Get("escape");
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    
                 }
             }
         }

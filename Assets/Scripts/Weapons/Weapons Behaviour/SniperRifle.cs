@@ -8,8 +8,6 @@ public class SniperRifle : MonoBehaviour, IWeaponBase
 
     public GameObject BulletPoint;
 
-    public LineRenderer LineRend;
-
     private bool AbleToShoot = true;
     private WeaponSoundController Emitter;
     private Animator AnimController;
