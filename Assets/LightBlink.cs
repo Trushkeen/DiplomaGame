@@ -6,7 +6,9 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class LightBlink : MonoBehaviour
 {
-    Light Light;
+    public float Chance = 0.2F;
+    private Light Light;
+
     void Start()
     {
         Light = GetComponent<Light>();
@@ -14,8 +16,7 @@ public class LightBlink : MonoBehaviour
 
     void FixedUpdate()
     {
-        var ran = Random.value;
-        if (ran <= .2)
+        if (Random.value <= Chance)
         {
             Light.enabled = true;
         }
