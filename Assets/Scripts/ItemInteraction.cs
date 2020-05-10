@@ -41,6 +41,25 @@ public class ItemInteraction : MonoBehaviour
                     }
                 }
             }
+            else if (go.tag == "QuestLoot")
+            {
+                InteractionGO.SetActive(true);
+
+                InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    var loot = go.GetComponent<LootableItem>().Loot;
+                    if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
+                    {
+                        var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
+                        var slot = cell.GetComponent<InventorySlot>();
+                        slot.DeleteButton.SetActive(false);
+                        slot.AddItem(loot);
+                        Inventory.Instance.Items.Add(cell);
+                        Destroy(go);
+                    }
+                }
+            }
             else if (go.tag == "VendingMachine")
             {
                 InteractionGO.SetActive(true);
@@ -56,7 +75,11 @@ public class ItemInteraction : MonoBehaviour
 
                         foreach (var cell in inv.Items)
                         {
-                            cell.GetComponent<InventorySlot>().SellBtnParent.SetActive(true);
+                            var slot = cell.GetComponent<InventorySlot>();
+                            if (slot.DeleteButton.activeSelf)
+                            {
+                                slot.SellBtnParent.SetActive(true);
+                            }
                         }
                     }
                     else
@@ -65,7 +88,7 @@ public class ItemInteraction : MonoBehaviour
                     }
                 }
             }
-            else if(go.tag == "EscapeTrigger")
+            else if (go.tag == "EscapeTrigger")
             {
                 InteractionGO.SetActive(true);
 
@@ -73,7 +96,7 @@ public class ItemInteraction : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    
+
                 }
             }
         }
