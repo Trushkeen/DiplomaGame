@@ -61014,6 +61014,11 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 159412611918184493, guid: 4857c292809737d40a0d75702f08696b,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 159412612775295650, guid: 4857c292809737d40a0d75702f08696b,
         type: 3}
       propertyPath: m_projectionMatrixMode
