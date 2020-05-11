@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject Player;
+    public GameObject crosshair;
     // Update is called once per frame
     private void Start()
     {
@@ -32,6 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        crosshair.active = true;
         PauseMenuUI.SetActive(false);
         GameIsPaused = false;
         MouseMove.Unfreeze();
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        crosshair.active = false;
         PauseMenuUI.SetActive(true);
         GameIsPaused = true;
         MouseMove.Freeze();
@@ -54,11 +57,5 @@ public class PauseMenu : MonoBehaviour
     {
         MouseMove.Unfreeze();
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void QuitGame()
-    {
-
-        Application.Quit();
     }
 }

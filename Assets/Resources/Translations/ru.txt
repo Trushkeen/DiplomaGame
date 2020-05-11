@@ -1,4 +1,4 @@
--startdebuglvl=Запустить отл. уровень
+-startdebuglvl=Запустить уровень
 -settings=Настройки
 -exit=Выход
 -auth=Войти
