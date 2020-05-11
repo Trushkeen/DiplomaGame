@@ -33,6 +33,9 @@ public class LoginScreenControl : MonoBehaviour
     public void CreateAccount()
     {
         System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
-
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
