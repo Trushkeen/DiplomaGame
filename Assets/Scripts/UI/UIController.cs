@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
 
     void UpdateHPText()
     {
-        HPText.text = "HP: " + Stats.GetHP();
+        HPText.text = Stats.GetHP().ToString();
     }
 
     void UpdateAmmoText()
@@ -50,6 +50,6 @@ public class UIController : MonoBehaviour
 
     void UpdateBalanceText()
     {
-        Inventory.Instance.BalanceText.text = "Balance: " + Stats.Balance;
+        Inventory.Instance.BalanceText.text = Stats.Balance.ToString();
     }
 }

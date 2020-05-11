@@ -35,8 +35,9 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         GameIsPaused = false;
         MouseMove.Unfreeze();
-        Player.GetComponentInChildren<AutomaticRifle>().enabled = true;
         Cursor.visible = false;
+        GameManager.EnableDisabledWeapons();
+        
     }
 
     void Pause()
@@ -46,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         MouseMove.Freeze();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Player.GetComponentInChildren<AutomaticRifle>().enabled = false;
+        GameManager.DisableActiveWeapons();
     }
 
     public void LoadMenu()
