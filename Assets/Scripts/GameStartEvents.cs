@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStartEvents : MonoBehaviour
 {
-    private bool DevelopMode = true;
+    private bool DevelopMode = false;
 
     private void Start()
     {

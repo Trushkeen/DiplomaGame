@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject Player;
-    public GameObject crosshair;
+    public GameObject Crosshair;
 
     private void Start()
     {
@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        crosshair.active = true;
+        Crosshair.SetActive(true);
         PauseMenuUI.SetActive(false);
         GameIsPaused = false;
         MouseMove.Unfreeze();
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        crosshair.active = false;
+        Crosshair.SetActive(false);
         PauseMenuUI.SetActive(true);
         GameIsPaused = true;
         MouseMove.Freeze();
