@@ -54,10 +54,4 @@ public class PauseMenu : MonoBehaviour
         MouseMove.Unfreeze();
         SceneManager.LoadScene("MainMenu");
     }
-
-    public void QuitGame()
-    {
-
-        Application.Quit();
-    }
 }
