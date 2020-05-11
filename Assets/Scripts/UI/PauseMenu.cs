@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject Player;
     public GameObject crosshair;
-    // Update is called once per frame
+
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
