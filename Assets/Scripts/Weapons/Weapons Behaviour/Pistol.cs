@@ -19,6 +19,11 @@ public class Pistol : MonoBehaviour
         AnimController = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(ShootingCooldown());
+    }
+
     public void Reload()
     {
         AnimController.SetBool("Reloading", false);

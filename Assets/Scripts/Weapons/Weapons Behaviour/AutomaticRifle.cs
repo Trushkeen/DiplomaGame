@@ -89,4 +89,9 @@ public class AutomaticRifle : MonoBehaviour, IWeaponBase
     {
         print(WB.AmmoNow + "/" + WB.AmmoTotal);
     }
+
+    public void OnEnable()
+    {
+        StartCoroutine(ShootingCooldown());
+    }
 }

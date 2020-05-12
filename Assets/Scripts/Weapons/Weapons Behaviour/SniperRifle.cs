@@ -19,6 +19,11 @@ public class SniperRifle : MonoBehaviour, IWeaponBase
         AnimController = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        AbleToShoot = true;
+    }
+
     public void Reload()
     {
         AnimController.SetBool("Reloading", false);

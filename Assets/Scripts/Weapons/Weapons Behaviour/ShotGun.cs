@@ -21,6 +21,11 @@ public class ShotGun : MonoBehaviour, IWeaponBase
         AnimController = GetComponent<Animator>();
     }
 
+    void OnEnable()
+    {
+        StartCoroutine(ShootingCooldown());
+    }
+
     public void Reload()
     {
         AnimController.SetBool("Reloading", false);
@@ -86,6 +91,7 @@ public class ShotGun : MonoBehaviour, IWeaponBase
             AnimController.SetBool("Reloading", true);
         }
     }
+
     IEnumerator ShootingCooldown()
     {
         AbleToShoot = false;

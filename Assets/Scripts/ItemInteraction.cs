@@ -8,11 +8,14 @@ public class ItemInteraction : MonoBehaviour
     public GameObject InventoryUI;
 
     public GameObject InteractionGO;
+
     private TextMeshProUGUI InteractionText;
+    private AudioSource LootSound;
 
     private void Start()
     {
         InteractionText = InteractionGO.GetComponent<TextMeshProUGUI>();
+        LootSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,6 +36,7 @@ public class ItemInteraction : MonoBehaviour
                     var loot = go.GetComponent<LootableItem>().Loot;
                     if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
                     {
+                        LootSound.Play();
                         var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
                         var slot = cell.GetComponent<InventorySlot>();
                         slot.AddItem(loot);
