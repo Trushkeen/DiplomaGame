@@ -19,6 +19,12 @@ public class AutomaticRifle : MonoBehaviour, IWeaponBase
         AnimController = GetComponent<Animator>();
     }
 
+    public void OnEnable()
+    {
+        AnimController?.Play("Out", 0);
+        StartCoroutine(ShootingCooldown());
+    }
+
     public void Reload()
     {
         AnimController.SetBool("Reloading", false);
@@ -88,10 +94,5 @@ public class AutomaticRifle : MonoBehaviour, IWeaponBase
     private void PrintAmmo()
     {
         print(WB.AmmoNow + "/" + WB.AmmoTotal);
-    }
-
-    public void OnEnable()
-    {
-        StartCoroutine(ShootingCooldown());
     }
 }

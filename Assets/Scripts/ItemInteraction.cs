@@ -29,45 +29,24 @@ public class ItemInteraction : MonoBehaviour
             if (go.tag == "Loot")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    var loot = go.GetComponent<LootableItem>().Loot;
-                    if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
-                    {
-                        LootSound.Play();
-                        var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
-                        var slot = cell.GetComponent<InventorySlot>();
-                        slot.AddItem(loot);
-                        Inventory.Instance.Items.Add(cell);
-                        Destroy(go);
-                    }
+                    PickupLoot(go);
                 }
             }
             else if (go.tag == "QuestLoot")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    var loot = go.GetComponent<LootableItem>().Loot;
-                    if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
-                    {
-                        var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
-                        var slot = cell.GetComponent<InventorySlot>();
-                        slot.DeleteButton.SetActive(false);
-                        slot.AddItem(loot);
-                        Inventory.Instance.Items.Add(cell);
-                        Destroy(go);
-                    }
+                    PickupLoot(go, questItem: true);
                 }
             }
             else if (go.tag == "VendingMachine")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = "[E] - " + Locale.Get("interact");
 
                 if (Input.GetKeyUp(KeyCode.E))
@@ -95,18 +74,32 @@ public class ItemInteraction : MonoBehaviour
             else if (go.tag == "EscapeTrigger")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = "[E] - " + Locale.Get("escape");
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-
+                    //TODO: Escape
                 }
             }
         }
         else
         {
             InteractionGO.SetActive(false);
+        }
+    }
+
+    private void PickupLoot(GameObject obj, bool questItem = false)
+    {
+        var loot = obj.GetComponent<LootableItem>().Loot;
+        if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
+        {
+            LootSound.Play();
+            var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
+            var slot = cell.GetComponent<InventorySlot>();
+            if (questItem) slot.DeleteButton.SetActive(false);
+            slot.AddItem(loot);
+            Inventory.Instance.Items.Add(cell);
+            Destroy(obj);
         }
     }
 }

@@ -23,6 +23,7 @@ public class ShotGun : MonoBehaviour, IWeaponBase
 
     void OnEnable()
     {
+        AnimController?.Play("Out", 0);
         StartCoroutine(ShootingCooldown());
     }
 

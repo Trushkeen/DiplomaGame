@@ -21,6 +21,7 @@ public class Pistol : MonoBehaviour
 
     private void OnEnable()
     {
+        AnimController?.Play("Out", 0);
         StartCoroutine(ShootingCooldown());
     }
 

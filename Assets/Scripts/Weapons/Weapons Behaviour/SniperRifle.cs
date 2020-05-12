@@ -21,7 +21,8 @@ public class SniperRifle : MonoBehaviour, IWeaponBase
 
     private void OnEnable()
     {
-        AbleToShoot = true;
+        AnimController?.Play("Out", 0);
+        StartCoroutine(ShootingCooldown());
     }
 
     public void Reload()
