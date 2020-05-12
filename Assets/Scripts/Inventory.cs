@@ -43,7 +43,6 @@ public class Inventory : MonoBehaviour
     public void EnableInv()
     {
         InventoryUI.SetActive(true);
-        BalanceText.gameObject.SetActive(true);
         GameManager.DisableActiveWeapons();
         MouseMove.Freeze();
         Cursor.lockState = CursorLockMode.None;
@@ -58,7 +57,6 @@ public class Inventory : MonoBehaviour
         }
 
         InventoryUI.SetActive(false);
-        BalanceText.gameObject.SetActive(false);
         GameManager.EnableDisabledWeapons();
         MouseMove.Unfreeze();
         Cursor.lockState = CursorLockMode.Locked;

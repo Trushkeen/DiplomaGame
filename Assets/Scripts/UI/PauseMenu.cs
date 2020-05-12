@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject Player;
-    // Update is called once per frame
+    public GameObject Crosshair;
+
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -32,32 +33,29 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Crosshair.SetActive(true);
         PauseMenuUI.SetActive(false);
         GameIsPaused = false;
         MouseMove.Unfreeze();
-        Player.GetComponentInChildren<AutomaticRifle>().enabled = true;
         Cursor.visible = false;
+        GameManager.EnableDisabledWeapons();
+        
     }
 
     void Pause()
     {
+        Crosshair.SetActive(false);
         PauseMenuUI.SetActive(true);
         GameIsPaused = true;
         MouseMove.Freeze();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Player.GetComponentInChildren<AutomaticRifle>().enabled = false;
+        GameManager.DisableActiveWeapons();
     }
 
     public void LoadMenu()
     {
         MouseMove.Unfreeze();
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void QuitGame()
-    {
-
-        Application.Quit();
     }
 }

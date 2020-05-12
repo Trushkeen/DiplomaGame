@@ -83,7 +83,6 @@
     <Compile Include="Assets\Scripts\ItemInteraction.cs" />
     <Compile Include="Assets\Scripts\Localization\Locale.cs" />
     <Compile Include="Assets\Scripts\Localization\LocalizedText.cs" />
-    <Compile Include="Assets\Scripts\LoginScreenControl.cs" />
     <Compile Include="Assets\Scripts\MouseMove.cs" />
     <Compile Include="Assets\Scripts\OnlineUser.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Scripts\RandomDelete.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnMob.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnersController.cs" />
+    <Compile Include="Assets\Scripts\UI\LoginScreenControl.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />

@@ -17,15 +17,15 @@ public class LoginScreenControl : MonoBehaviour
         {
             if (!Auth.IsLoggingNow)
             {
-            Auth.IsLoggingNow = true;
-            Auth.ConfirmUserData(LoginText.text, PasswordText.text);
+                Auth.IsLoggingNow = true;
+                Auth.ConfirmUserData(LoginText.text, PasswordText.text);
             }
             else
             {
-            print("Client already connecting, wait...");
+                print("Client already connecting, wait...");
             }
         }
-        catch (ArgumentException) 
+        catch (ArgumentException)
         {
             ErrorLogData.SetActive(true);
         }
@@ -33,6 +33,9 @@ public class LoginScreenControl : MonoBehaviour
     public void CreateAccount()
     {
         System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
-
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

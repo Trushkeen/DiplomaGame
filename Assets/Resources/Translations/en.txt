@@ -1,4 +1,4 @@
--startdebuglvl=Start Debug Level
+-startdebuglvl=Start Level
 -settings=Settings
 -exit=Exit
 -auth=Authenticate
