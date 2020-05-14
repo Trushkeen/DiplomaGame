@@ -18373,9 +18373,37 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
         type: 3}
+      propertyPath: Minibosses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
+        type: 3}
+      propertyPath: DefaultEnemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
+        type: 3}
       propertyPath: maxSpawn
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
+        type: 3}
+      propertyPath: Minibosses.Array.data[0]
+      value: 
+      objectReference: {fileID: 4303409893858507154, guid: 4ed44dbafd745e24e9d0996dbc13b035,
+        type: 3}
+    - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
+        type: 3}
+      propertyPath: DefaultEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4303409893858507154, guid: 4ed44dbafd745e24e9d0996dbc13b035,
+        type: 3}
+    - target: {fileID: 2018030119001761081, guid: 107130ad12439ae46a1ca1b3d73355b3,
+        type: 3}
+      propertyPath: Minibosses.Array.data[1]
+      value: 
+      objectReference: {fileID: 7293094661688923156, guid: 5a1a892efefe29b41961fc79d630ffe8,
+        type: 3}
     - target: {fileID: 2018030119001761082, guid: 107130ad12439ae46a1ca1b3d73355b3,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 40
   Accuracy: 100
-  AmmoTotal: 120
+  AmmoTotal: 300
   AmmoClip: 18
   AmmoNow: 18
 --- !u!114 &8428474119077593080

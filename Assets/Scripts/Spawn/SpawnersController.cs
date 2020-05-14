@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnersController : MonoBehaviour
 {
+    public static int MaxEnemies = 15;
+
     GameObject[] PlayerArray;
     GameObject[] SpawnersArray;
     public float MaxRange = 500F;
