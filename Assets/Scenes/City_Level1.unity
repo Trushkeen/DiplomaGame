@@ -695,7 +695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -30.9, y: 10.1}
+  m_AnchoredPosition: {x: -23.8, y: 10.1}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &7566588
@@ -26522,7 +26522,7 @@ PrefabInstance:
     - target: {fileID: 6903955243338027383, guid: ab52330aad5f30349abab28b5708eab3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -114.50001
+      value: -107.39998
       objectReference: {fileID: 0}
     - target: {fileID: 6903955243338027383, guid: ab52330aad5f30349abab28b5708eab3,
         type: 3}
@@ -26627,7 +26627,7 @@ PrefabInstance:
     - target: {fileID: 6903955243744439334, guid: ab52330aad5f30349abab28b5708eab3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -255.8
+      value: -248.69998
       objectReference: {fileID: 0}
     - target: {fileID: 6903955243744439334, guid: ab52330aad5f30349abab28b5708eab3,
         type: 3}
@@ -27631,7 +27631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -30.9, y: 10.1}
+  m_AnchoredPosition: {x: -23.799973, y: 10.100006}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &743060138
@@ -48203,7 +48203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.833487, y: -174.90001}
+  m_AnchoredPosition: {x: 1.2665391, y: -174.90001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1300465818
@@ -48827,6 +48827,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle
       objectReference: {fileID: 0}
+    - target: {fileID: 3252185132835777685, guid: e6fc1e147551da740b1a620a6e3d7857,
+        type: 3}
+      propertyPath: m_TagString
+      value: QuestLoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774531165315724703, guid: e6fc1e147551da740b1a620a6e3d7857,
+        type: 3}
+      propertyPath: Loot
+      value: 
+      objectReference: {fileID: 11400000, guid: d81769a90cdf34d42a1ccd34c2fd4550,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6fc1e147551da740b1a620a6e3d7857, type: 3}
 --- !u!1 &1325845465 stripped
