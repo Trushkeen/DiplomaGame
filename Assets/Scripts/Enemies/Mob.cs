@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mob : MonoBehaviour
 {
     public string Name;
+    public float MaxHP;
     /// <summary>
     /// If you want to damage an enemy, use <b>DealDamage</b> method instead
     /// </summary>
