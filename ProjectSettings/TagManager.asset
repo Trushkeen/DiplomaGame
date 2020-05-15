@@ -10,6 +10,7 @@ TagManager:
   - Terrain
   - Loot
   - VendingMachine
+  - Target
   layers:
   - Default
   - TransparentFX
