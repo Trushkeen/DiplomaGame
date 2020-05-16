@@ -23,4 +23,9 @@ public class MainMenuUI : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Site()
+    {
+        System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/");
+    }
 }

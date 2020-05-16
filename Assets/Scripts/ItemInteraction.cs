@@ -8,16 +8,19 @@ public class ItemInteraction : MonoBehaviour
     public GameObject InventoryUI;
 
     public GameObject InteractionGO;
+
     private TextMeshProUGUI InteractionText;
+    private AudioSource LootSound;
 
     private void Start()
     {
         InteractionText = InteractionGO.GetComponent<TextMeshProUGUI>();
+        LootSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100F, ~(12 << 8), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 10F, ~(12 << 8), QueryTriggerInteraction.Collide))
         {
             var go = hit.collider.gameObject;
 
@@ -26,25 +29,24 @@ public class ItemInteraction : MonoBehaviour
             if (go.tag == "Loot")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    var loot = go.GetComponent<LootableItem>().Loot;
-                    if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
-                    {
-                        var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
-                        var slot = cell.GetComponent<InventorySlot>();
-                        slot.AddItem(loot);
-                        Inventory.Instance.Items.Add(cell);
-                        Destroy(go);
-                    }
+                    PickupLoot(go);
+                }
+            }
+            else if (go.tag == "QuestLoot")
+            {
+                InteractionGO.SetActive(true);
+                InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    PickupLoot(go, questItem: true);
                 }
             }
             else if (go.tag == "VendingMachine")
             {
                 InteractionGO.SetActive(true);
-
                 InteractionText.text = "[E] - " + Locale.Get("interact");
 
                 if (Input.GetKeyUp(KeyCode.E))
@@ -56,7 +58,11 @@ public class ItemInteraction : MonoBehaviour
 
                         foreach (var cell in inv.Items)
                         {
-                            cell.GetComponent<InventorySlot>().SellBtnParent.SetActive(true);
+                            var slot = cell.GetComponent<InventorySlot>();
+                            if (slot.DeleteButton.activeSelf)
+                            {
+                                slot.SellBtnParent.SetActive(true);
+                            }
                         }
                     }
                     else
@@ -65,10 +71,35 @@ public class ItemInteraction : MonoBehaviour
                     }
                 }
             }
+            else if (go.tag == "EscapeTrigger")
+            {
+                InteractionGO.SetActive(true);
+                InteractionText.text = "[E] - " + Locale.Get("escape");
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    //TODO: Escape
+                }
+            }
         }
         else
         {
             InteractionGO.SetActive(false);
+        }
+    }
+
+    private void PickupLoot(GameObject obj, bool questItem = false)
+    {
+        var loot = obj.GetComponent<LootableItem>().Loot;
+        if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
+        {
+            LootSound.Play();
+            var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
+            var slot = cell.GetComponent<InventorySlot>();
+            if (questItem) slot.DeleteButton.SetActive(false);
+            slot.AddItem(loot);
+            Inventory.Instance.Items.Add(cell);
+            Destroy(obj);
         }
     }
 }

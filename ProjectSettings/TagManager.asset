@@ -11,6 +11,8 @@ TagManager:
   - Loot
   - VendingMachine
   - Target
+  - EscapeTrigger
+  - QuestLoot
   layers:
   - Default
   - TransparentFX

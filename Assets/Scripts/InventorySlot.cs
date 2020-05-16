@@ -11,6 +11,7 @@ public class InventorySlot : MonoBehaviour
 
     public Text SellBtnText;
     public GameObject SellBtnParent;
+    public GameObject DeleteButton;
 
     private void Start()
     {

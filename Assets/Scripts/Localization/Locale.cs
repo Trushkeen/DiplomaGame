@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class Locale
 {
-    public static string Language { get; private set; } = "ru";
+    public static string Language { get; private set; } = "en";
     public static bool LocaleLoaded = false;
     private static Dictionary<string, string> CurrentLocale;
 

@@ -10,7 +10,9 @@ public class SpawnMob : MonoBehaviour
     public float Delay;
     private bool AbleToSpawn = true;
 
-    public GameObject[] Enemies;
+    public GameObject[] DefaultEnemies;
+    public GameObject[] Minibosses;
+
 
     private void Start()
     {
@@ -19,10 +21,25 @@ public class SpawnMob : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= MaxSpawn)
+        if (AbleToSpawn && GameObject.FindGameObjectsWithTag("Enemy").Length <= SpawnersController.MaxEnemies)
         {
-            var obj = Instantiate(original: Enemies[0], position: SpawnVector, rotation: transform.rotation);
+            for (int i = 0; i < 5; i++)
+            {
+                var enemy = Instantiate(original: DefaultEnemies[Random.Range(0, DefaultEnemies.Length)],
+                    position: SpawnVector, rotation: transform.rotation);
+            }
+            var boss = Instantiate(original: Minibosses[Random.Range(0, Minibosses.Length)],
+                    position: SpawnVector, rotation: transform.rotation);
+            boss.transform.localScale *= 3;
+            var bossStats = boss.GetComponent<Mob>();
+            bossStats.HP *= 4;
+            bossStats.MaxHP = bossStats.HP;
+            StartCoroutine(SpawnCooldown());
         }
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(SpawnCooldown());
     }
 
