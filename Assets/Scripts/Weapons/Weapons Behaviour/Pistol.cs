@@ -52,7 +52,7 @@ public class Pistol : MonoBehaviour
         if (AbleToShoot && WB.AmmoNow > 0)
         {
             Emitter.PlayShot();
-            if (Physics.Raycast(BulletPoint.transform.position, -BulletPoint.transform.forward, out RaycastHit hit, 100F, ~(2 << 8), QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(BulletPoint.transform.position, -BulletPoint.transform.forward, out RaycastHit hit, 200F, ~(2 << 8), QueryTriggerInteraction.Ignore))
             {
                 Debug.DrawRay(BulletPoint.transform.position, BulletPoint.transform.forward * -100F, Color.red, 10f);
 

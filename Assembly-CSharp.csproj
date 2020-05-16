@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\Enemies\IMobStats.cs" />
     <Compile Include="Assets\Scripts\Enemies\MilitaryTankController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mob.cs" />
+    <Compile Include="Assets\Scripts\Enemies\RobotAttackHand.cs" />
+    <Compile Include="Assets\Scripts\Enemies\RobotMelee.cs" />
     <Compile Include="Assets\Scripts\Enemies\SpiderBehaviour.cs" />
     <Compile Include="Assets\Scripts\Enemies\TankController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
