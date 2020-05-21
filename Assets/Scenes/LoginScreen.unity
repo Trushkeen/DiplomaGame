@@ -1422,7 +1422,7 @@ RectTransform:
   m_GameObject: {fileID: 941517057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1489599869}
   m_Father: {fileID: 1666686848}
@@ -1430,7 +1430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -47.5}
+  m_AnchoredPosition: {x: 0, y: -67}
   m_SizeDelta: {x: 439.8, y: 55.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941517059
@@ -1601,7 +1601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -258.5}
+  m_AnchoredPosition: {x: 0, y: -240}
   m_SizeDelta: {x: 271.7, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944154722
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfee67125387db54c92c49b4a71e738d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoginText: {fileID: 0}
+  LoginText: {fileID: 656928469}
   PasswordText: {fileID: 2000229678}
   ErrorLogData: {fileID: 209090143}
 --- !u!1 &1734754994
@@ -2301,7 +2301,7 @@ RectTransform:
   m_GameObject: {fileID: 1734754994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 994041909}
   m_Father: {fileID: 1666686848}
@@ -2358,8 +2358,8 @@ MonoBehaviour:
   m_VerticalScrollbar: {fileID: 0}
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -2907,7 +2907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -207.5}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 271.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031779340
