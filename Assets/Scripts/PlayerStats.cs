@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class PlayerStats : MonoBehaviour
     public void DiscardHP(float value)
     {
         HP -= value;
-        //TODO: death screen if 0
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("DeathScreen");
+        }
     }
 
     public void AddHP(float value)

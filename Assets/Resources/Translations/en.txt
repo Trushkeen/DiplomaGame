@@ -12,3 +12,5 @@
 -cost=Cost
 -interact=Interact
 -escape=Escape
+-mainmenu=Main Menu
+-deathtext=You died and lost all of your items.
