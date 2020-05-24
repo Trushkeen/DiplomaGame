@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\AutomaticRifle.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Katana.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Knife.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\Pistol.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\RocketBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons Behaviour\ShotGun.cs" />
