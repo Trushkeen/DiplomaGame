@@ -2176,6 +2176,7 @@ MonoBehaviour:
   HPText: {fileID: 9015142122315791645}
   AmmoText: {fileID: 9015142121380102217}
   BalanceText: {fileID: 707045062723126749}
+  HPBar: {fileID: 2509614716484794276}
 --- !u!114 &2509614715415203524
 MonoBehaviour:
   m_ObjectHideFlags: 0

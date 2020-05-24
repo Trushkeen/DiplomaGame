@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI AmmoText;
     public TextMeshProUGUI BalanceText;
+
+    public Image HPBar;
 
     private Camera PlayerCamera;
     private PlayerStats Stats;
@@ -26,13 +29,14 @@ public class UIController : MonoBehaviour
         {
             UpdateAmmoText();
         }
-        UpdateHPText();
+        UpdateHPInfo();
         UpdateBalanceText();
     }
 
-    void UpdateHPText()
+    void UpdateHPInfo()
     {
         HPText.text = Stats.GetHP().ToString();
+        HPBar.fillAmount = Stats.GetHP() / 100F;
     }
 
     void UpdateAmmoText()

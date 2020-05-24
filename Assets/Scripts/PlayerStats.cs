@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         ID = PlayersManager.GetInstance().GetAvailableID();
+        InvokeRepeating("RestoreHP", 1F, 1F);
     }
 
     public void DiscardHP(float value)
@@ -27,6 +28,19 @@ public class PlayerStats : MonoBehaviour
         if (HP <= 0)
         {
             SceneManager.LoadScene("DeathScreen");
+        }
+    }
+
+    private void RestoreHP()
+    {
+        if (HP < 100)
+        {
+            if (HP > 70)
+                AddHP(1);
+            else if (HP > 50)
+                AddHP(2);
+            else
+                AddHP(3);
         }
     }
 
