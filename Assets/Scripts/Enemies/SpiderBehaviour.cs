@@ -42,7 +42,7 @@ public class SpiderBehaviour : MonoBehaviour
     //Attack
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !FollowPlayer)
         {
             var go = collision.gameObject;
             go.GetComponent<PlayerStats>().DiscardHP(Mob.Damage);
