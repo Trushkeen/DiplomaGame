@@ -14,3 +14,7 @@
 -escape=Escape
 -mainmenu=Main Menu
 -deathtext=You died and lost all of your items.
+-pda=PDA
+-documents=Documents
+-usb stick=USB Stick
+-find=Find: 
