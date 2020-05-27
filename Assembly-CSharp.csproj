@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\UI\Waypoints.cs" />
     <Compile Include="Assets\Scripts\Utils\DeathScreenControl.cs" />
+    <Compile Include="Assets\Scripts\Utils\LevelStartControl.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeaponBase.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBase.cs" />
