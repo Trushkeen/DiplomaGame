@@ -20,7 +20,7 @@ public class ItemInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 10F, ~(12 << 8), QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 25F, ~(12 << 8), QueryTriggerInteraction.Collide))
         {
             var go = hit.collider.gameObject;
 

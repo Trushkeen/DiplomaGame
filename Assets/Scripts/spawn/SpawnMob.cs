@@ -30,7 +30,7 @@ public class SpawnMob : MonoBehaviour
             }
             var boss = Instantiate(original: Minibosses[Random.Range(0, Minibosses.Length)],
                     position: SpawnVector, rotation: transform.rotation);
-            boss.transform.localScale *= 3;
+            boss.transform.localScale *= 2;
             var bossStats = boss.GetComponent<Mob>();
             bossStats.HP *= 4;
             bossStats.MaxHP = bossStats.HP;

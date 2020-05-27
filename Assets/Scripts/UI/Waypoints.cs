@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Waypoints : MonoBehaviour
 {
-    private Image IconImg;
-    private Text DistanceText;
+    public Image IconImg;
+    //public Text DistanceText;
 
     public Transform Player;
     public Transform Target;
@@ -14,31 +14,50 @@ public class Waypoints : MonoBehaviour
 
     public float CloseEnoughDist;
 
-    private void Start()
+    #region Singleton
+    public static Waypoints Instance;
+
+    private void Awake()
     {
-        IconImg = GetComponent<Image>();
-        DistanceText = GetComponentInChildren<Text>();
+        if (Instance != null)
+        {
+            print("Several instances of waypoints found");
+            return;
+        }
+        Instance = this;
     }
+    #endregion
 
     private void Update()
     {
         if (Target != null) 
         {
-            GetDistance();
             CheckOnScreen();
+            UpdDistance();
+        }
+    }
+
+    public void UpdateWaypoint(Transform target)
+    {
+        Target = target;
+    }
+
+    private void UpdDistance()
+    {
+        if(Vector3.Distance(Player.position, Target.position) < CloseEnoughDist)
+        {
+            IconImg.enabled = false;
         }
     }
 
     private void GetDistance() 
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
-
         float dist = Vector3.Distance(Player.position, Target.position);
-        DistanceText.text = dist.ToString("f1") + "m";
 
         if (dist < CloseEnoughDist)
         {
-            Destroy(gameObject);
+            IconImg.enabled = false;
+            //TODO: ACKNOWLEDGE OF ACHIEVEMENT
         }
     }
 
@@ -48,19 +67,19 @@ public class Waypoints : MonoBehaviour
         
         if (thing <= 0) 
         {
-            TaggleUI(false);
+            ToggleUI(false);
         }
         else 
         {
-            TaggleUI(true);
+            ToggleUI(true);
             transform.position = Camera.WorldToScreenPoint(Target.position);
         }
     }
 
-    private void TaggleUI(bool value) 
+    private void ToggleUI(bool value) 
     {
         IconImg.enabled = value;
-        DistanceText.enabled = value;
+        //DistanceText.enabled = value;
 
     }
 
