@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    public GameObject MainElements;
-    public GameObject SettingsElements;
-
     public void StartDebugLevel()
     {
         SceneManager.LoadScene("City_Level1", LoadSceneMode.Single);
     }
 
-    public void OpenSettings()
+    public void ShowTab(GameObject obj)
     {
-        //MainElements.SetActive(false);
-        //SettingsElements.SetActive(true);
+        obj.SetActive(true);
+    }
+
+    public void HideTab(GameObject obj)
+    {
+        obj.SetActive(false);
     }
 
     public void LeaveGame()
