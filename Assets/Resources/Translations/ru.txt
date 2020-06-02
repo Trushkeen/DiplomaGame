@@ -1,4 +1,4 @@
--startdebuglvl=Запустить уровень
+-startdebuglvl=Играть
 -settings=Настройки
 -exit=Выход
 -auth=Войти
@@ -18,3 +18,8 @@
 -documents=Документы
 -usb stick=USB флешка
 -find=Найти: 
+-authors=Aвторы
+-site=Сайт
+-back=Назад
+-resolution=Разрешение
+-volume=громкость
