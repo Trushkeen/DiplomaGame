@@ -98,6 +98,8 @@
     <Compile Include="Assets\Scripts\UI\LoginScreenControl.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Resolution.cs" />
+    <Compile Include="Assets\Scripts\UI\Switch.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\UI\Waypoints.cs" />
     <Compile Include="Assets\Scripts\Utils\DeathScreenControl.cs" />

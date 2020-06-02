@@ -1,4 +1,4 @@
--startdebuglvl=Start Level
+-startdebuglvl=Play
 -settings=Settings
 -exit=Exit
 -auth=Authenticate
@@ -18,3 +18,8 @@
 -documents=Documents
 -usb stick=USB Stick
 -find=Find: 
+-authors=Authors
+-site=Site
+-back=Back
+-resolution=Resolution
+-volume=Volume
