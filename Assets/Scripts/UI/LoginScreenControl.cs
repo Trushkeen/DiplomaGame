@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LoginScreenControl : MonoBehaviour
 {
     public TextMeshProUGUI LoginText;
-    public TextMeshProUGUI PasswordText;
+    public TMP_InputField PasswordText;
     public GameObject ErrorLogData;
 
     public void ProceedAuth()
