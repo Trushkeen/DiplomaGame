@@ -7,17 +7,6 @@ using UnityEngine.UI;
 public class Resolution : MonoBehaviour
 {
     public TMP_Dropdown Dropdown;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeResolution()
     {
         switch (Dropdown.value)
