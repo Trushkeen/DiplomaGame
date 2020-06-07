@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoginScreenControl : MonoBehaviour
 {
     public TextMeshProUGUI LoginText;
     public TMP_InputField PasswordText;
     public GameObject ErrorLogData;
+
+    public GameObject LoadingImg;
 
     public void ProceedAuth()
     {
@@ -30,12 +33,19 @@ public class LoginScreenControl : MonoBehaviour
             ErrorLogData.SetActive(true);
         }
     }
+
     public void CreateAccount()
     {
         System.Diagnostics.Process.Start("https://mplace.azurewebsites.net/Home/Register");
     }
+
     public void Exit()
     {
         Application.Quit();
+    }
+
+    private void FixedUpdate()
+    {
+        LoadingImg.SetActive(Auth.IsLoggingNow);
     }
 }
