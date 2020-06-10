@@ -7,11 +7,10 @@ public class ShotGun : MonoBehaviour, IWeaponBase
     private bool AbleToShoot = true;
 
     public WeaponBase WB;
-
     public GameObject BulletPoint;
+    public Light MuzzleFlash;
 
     private WeaponSoundController Emitter;
-
     private Animator AnimController;
 
     void Start()
@@ -77,6 +76,7 @@ public class ShotGun : MonoBehaviour, IWeaponBase
             WB.AmmoNow--;
             MouseMove.ShakeCamera();
             StartCoroutine(ShootingCooldown());
+            StartCoroutine(MuzzleFlashCooldown());
         }
     }
 
@@ -98,5 +98,12 @@ public class ShotGun : MonoBehaviour, IWeaponBase
         AbleToShoot = false;
         yield return new WaitForSeconds(0.3F);
         AbleToShoot = true;
+    }
+
+    private IEnumerator MuzzleFlashCooldown()
+    {
+        MuzzleFlash.enabled = true;
+        yield return new WaitForSeconds(0.05F);
+        MuzzleFlash.enabled = false;
     }
 }

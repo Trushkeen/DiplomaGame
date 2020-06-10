@@ -7,6 +7,7 @@ public class Pistol : MonoBehaviour
     public WeaponBase WB;
 
     public GameObject BulletPoint;
+    public Light MuzzleFlash;
 
     private bool AbleToShoot = true;
     private WeaponSoundController Emitter;
@@ -69,6 +70,7 @@ public class Pistol : MonoBehaviour
             MouseMove.ShakeCamera();
             WB.AmmoNow--;
             StartCoroutine(ShootingCooldown());
+            StartCoroutine(MuzzleFlashCooldown());
         }
     }
 
@@ -90,6 +92,13 @@ public class Pistol : MonoBehaviour
         AbleToShoot = false;
         yield return new WaitForSeconds(0.1F);
         AbleToShoot = true;
+    }
+
+    private IEnumerator MuzzleFlashCooldown()
+    {
+        MuzzleFlash.enabled = true;
+        yield return new WaitForSeconds(0.05F);
+        MuzzleFlash.enabled = false;
     }
 
     private void PrintAmmo()
