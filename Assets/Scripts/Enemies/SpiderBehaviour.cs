@@ -57,6 +57,7 @@ public class SpiderBehaviour : MonoBehaviour
     private void Runaway()
     {
         var randomPos = new Vector3(Random.Range(0, 100000), Random.Range(0, 100000), Random.Range(0, 100000));
+        //var runawayPos = Player.transform.position * Random.Range(1000, 5000);
         NavAgent.SetDestination(randomPos);
     }
 
