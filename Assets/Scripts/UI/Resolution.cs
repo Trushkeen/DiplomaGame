@@ -12,12 +12,6 @@ public class Resolution : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeResolution()
     {
         switch (Dropdown.value)
