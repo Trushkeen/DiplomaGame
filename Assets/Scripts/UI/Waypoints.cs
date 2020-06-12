@@ -30,7 +30,7 @@ public class Waypoints : MonoBehaviour
 
     private void Update()
     {
-        if (Target != null) 
+        if (Target != null)
         {
             CheckOnScreen();
             UpdDistance();
@@ -44,39 +44,38 @@ public class Waypoints : MonoBehaviour
 
     private void UpdDistance()
     {
-        if(Vector3.Distance(Player.position, Target.position) < CloseEnoughDist)
+        if (Vector3.Distance(Player.position, Target.position) < CloseEnoughDist)
         {
             IconImg.enabled = false;
         }
     }
 
-    private void GetDistance() 
+    private void GetDistance()
     {
         float dist = Vector3.Distance(Player.position, Target.position);
 
         if (dist < CloseEnoughDist)
         {
             IconImg.enabled = false;
-            //TODO: ACKNOWLEDGE OF ACHIEVEMENT
         }
     }
 
-    private void CheckOnScreen() 
+    private void CheckOnScreen()
     {
         float thing = Vector3.Dot((Target.position - Camera.transform.position).normalized, Camera.transform.forward);
-        
-        if (thing <= 0) 
+
+        if (thing <= 0)
         {
             ToggleUI(false);
         }
-        else 
+        else
         {
             ToggleUI(true);
             transform.position = Camera.WorldToScreenPoint(Target.position);
         }
     }
 
-    private void ToggleUI(bool value) 
+    private void ToggleUI(bool value)
     {
         IconImg.enabled = value;
         //DistanceText.enabled = value;
