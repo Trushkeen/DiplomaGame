@@ -90,13 +90,21 @@ public class ItemInteraction : MonoBehaviour
 
     private void PickupLoot(GameObject obj, bool questItem = false)
     {
-        var loot = obj.GetComponent<LootableItem>().Loot;
+        var lootItem = obj.GetComponent<LootableItem>();
+        var loot = lootItem.Loot;
         if (Inventory.Instance.Items.Count < Inventory.Instance.Space)
         {
             LootSound.Play();
             var cell = Instantiate(Inventory.Instance.BasicCell, InventoryUI.transform);
             var slot = cell.GetComponent<InventorySlot>();
-            if (questItem) slot.DeleteButton.SetActive(false);
+            if (questItem)
+            {
+                slot.DeleteButton.SetActive(false);
+                if (lootItem.HasVOClip)
+                {
+                    lootItem.PlayVOClip();
+                }
+            }
             slot.AddItem(loot);
             Inventory.Instance.Items.Add(cell);
             Destroy(obj);
