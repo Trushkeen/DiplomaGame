@@ -1080,6 +1080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9125d43fb30dc42a3b99eecd389910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainElements: {fileID: 438234361}
+  SettingsElements: {fileID: 548448327}
 --- !u!1 &532346693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9125d43fb30dc42a3b99eecd389910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainElements: {fileID: 438234361}
+  SettingsElements: {fileID: 548448327}
 --- !u!1 &917295144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,7 +2274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e16317ecf635a54c81dfe793558d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dropdown: {fileID: 1233723758}
 --- !u!1 &990683819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,7 +4099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1479178726
 RectTransform:
   m_ObjectHideFlags: 0
