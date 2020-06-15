@@ -8,50 +8,37 @@ public class QuestManager : MonoBehaviour
 {
     public TextMeshProUGUI QuestText;
 
-    private List<GameObject> QuestObjects = new List<GameObject>();
-    private List<GameObject> SortedQuestObjects = new List<GameObject>();
-    private GameObject TargetLoot;
-    private GameObject EscapePoint;
+    public GameObject[] Objectives;
+    public int CurrentObjective = 0;
+    public string LocalePrefix = "lvl1_";
 
-    void Start()
+    #region Singleton
+    public static QuestManager Instance;
+
+    private void Awake()
     {
-        QuestObjects.AddRange(GameObject.FindGameObjectsWithTag("QuestLoot"));
-        Lvl1Scenario();
+        if (Instance != null)
+        {
+            print("Several instances of quest managers found");
+            return;
+        }
+        Instance = this;
+    }
+    #endregion
+
+    private void Start()
+    {
+        Waypoints.Instance.UpdateWaypoint(Objectives[CurrentObjective].transform);
+        QuestText.text = Locale.Get(LocalePrefix + CurrentObjective.ToString());
     }
 
-    void Update()
+    public void UpdateObjective()
     {
-        if (TargetLoot != null)
+        CurrentObjective++;
+        if (CurrentObjective < Objectives.Length)
         {
-            if (!Locale.LocaleLoaded)
-            {
-                Locale.LoadLocale();
-            }
-            QuestText.text = Locale.Get("find") + TargetLoot.GetComponent<LootableItem>().Loot.Name;
-            Waypoints.Instance.UpdateWaypoint(TargetLoot.transform);
-        }
-        else
-        {
-            if (SortedQuestObjects.Count > 0)
-            {
-                SortedQuestObjects.RemoveAt(0);
-                TargetLoot = SortedQuestObjects[0];
-            }
-        }
-        //if script causes exception, we need to add a escape point and adapt script for it
-    }
-
-    private void Lvl1Scenario()
-    {
-        foreach (var item in QuestObjects)
-        {
-            var loot = item.GetComponent<LootableItem>().Loot;
-            if (loot.Name == "PDA")
-            {
-                SortedQuestObjects.Add(item);
-                SortedQuestObjects.AddRange(QuestObjects);
-                TargetLoot = item;
-            }
+            Waypoints.Instance.UpdateWaypoint(Objectives[CurrentObjective].transform);
+            QuestText.text = Locale.Get(LocalePrefix + CurrentObjective.ToString());
         }
     }
 }

@@ -103,6 +103,7 @@ public class ItemInteraction : MonoBehaviour
                 if (lootItem.HasVOClip)
                 {
                     lootItem.PlayVOClip();
+                    QuestManager.Instance.UpdateObjective();
                 }
             }
             slot.AddItem(loot);

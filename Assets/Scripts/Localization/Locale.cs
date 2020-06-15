@@ -36,6 +36,10 @@ public static class Locale
 
     public static string Get(string key)
     {
+        if (!LocaleLoaded)
+        {
+            LoadLocale();
+        }
         return CurrentLocale[key.ToLower()];
     }
 }

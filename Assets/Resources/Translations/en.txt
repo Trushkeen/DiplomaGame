@@ -21,3 +21,12 @@
 -site=Site
 -language=Language
 -authors=Authors
+-lvl10=Listen to captain
+-lvl11=Inspect collapse
+-lvl12=Explore the place where fighters disappeared
+-lvl13=Take a closer look
+-lvl14=Inspect laboratory
+-lvl15=Find information about ongoing research
+-lvl16=Inspect storage
+-lvl17=Wait for evacuation
+-lvl18=Evacuate

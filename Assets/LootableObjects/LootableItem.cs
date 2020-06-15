@@ -11,6 +11,7 @@ public class LootableItem : MonoBehaviour
     [Header("No need to set source, it finds itself")]
     public AudioSource VOSource;
     public AudioClip VOClip;
+    public float WaypointDelaySeconds;
 
     private void Start()
     {
@@ -23,7 +24,10 @@ public class LootableItem : MonoBehaviour
         {
             VOSource.clip = VOClip;
             VOSource.Play();
-            DelayWaypoint(VOClip.length);
+            if (WaypointDelaySeconds == 0)
+                DelayWaypoint(VOClip.length);
+            else
+                DelayWaypoint(WaypointDelaySeconds);
         }
         else
         {
