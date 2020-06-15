@@ -18,3 +18,6 @@
 -documents=Documents
 -usb stick=USB Stick
 -find=Find: 
+-site=Site
+-language=Language
+-authors=Authors

@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Spawn\SpawnMob.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnersController.cs" />
     <Compile Include="Assets\Scripts\UI\LoginScreenControl.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenuLocaleSelector.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\Resolution.cs" />
