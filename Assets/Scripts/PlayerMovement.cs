@@ -34,14 +34,14 @@ public class PlayerMovement : MonoBehaviour
             transform.position += transform.right * -(SprintEnabled ? Speed * 2 : Speed) * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(Controls.JumpBtn))
-        {
-            Debug.DrawRay(transform.position, Vector3.down * 15F, Color.red, 5F);
-            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 15F, LayerMask., QueryTriggerInteraction.Ignore))
-            {
-                Rigid.AddForce(transform.up * 300F, ForceMode.Acceleration);
-            }
-        }
+        //if (Input.GetKeyDown(Controls.JumpBtn))
+        //{
+        //    Debug.DrawRay(transform.position, Vector3.down * 15F, Color.red, 5F);
+        //    if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 15F, LayerMask., QueryTriggerInteraction.Ignore))
+        //    {
+        //        Rigid.AddForce(transform.up * 300F, ForceMode.Acceleration);
+        //    }
+        //}
 
         if (transform.position.y < 0)
         {

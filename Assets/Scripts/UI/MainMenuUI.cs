@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    //public Slider slider;
+
+    public void Update() 
+    {
+        //AudioListener.volume = slider.value;
+    }
     public void StartDebugLevel()
     {
         SceneManager.LoadScene("City_Level1", LoadSceneMode.Single);
