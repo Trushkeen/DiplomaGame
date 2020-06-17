@@ -80,8 +80,11 @@ public class MilitaryTankController : MonoBehaviour
     public void MoveToTarget()
     {
         var playerPos = Player.transform.position;
-        NavAgent.speed = GetComponent<Mob>().Speed;
-        NavAgent.SetDestination(playerPos);
+        if (NavAgent.enabled)
+        {
+            NavAgent.speed = GetComponent<Mob>().Speed;
+            NavAgent.SetDestination(playerPos);
+        }
     }
 
     //TODO: should be remade to face nearest player (calculate distance)
