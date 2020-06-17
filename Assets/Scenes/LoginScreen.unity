@@ -2271,7 +2271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoginText: {fileID: 656928469}
-  PasswordText: {fileID: 2000229678}
+  PasswordText: {fileID: 1734754996}
   ErrorLogData: {fileID: 209090143}
 --- !u!1 &1734754994
 GameObject:
