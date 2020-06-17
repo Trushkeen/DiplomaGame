@@ -37,8 +37,13 @@ public class QuestManager : MonoBehaviour
         CurrentObjective++;
         if (CurrentObjective < Objectives.Length)
         {
+            Waypoints.Instance.enabled = true;
             Waypoints.Instance.UpdateWaypoint(Objectives[CurrentObjective].transform);
             QuestText.text = Locale.Get(LocalePrefix + CurrentObjective.ToString());
+        }
+        else
+        {
+            Waypoints.Instance.enabled = false;
         }
     }
 }
