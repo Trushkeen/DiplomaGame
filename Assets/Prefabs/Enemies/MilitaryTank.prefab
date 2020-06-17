@@ -315,7 +315,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.203
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1479,8 +1479,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 5
-  m_Speed: 5
-  m_Acceleration: 8
+  m_Speed: 100
+  m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 25
@@ -1638,7 +1638,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.218
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1844,7 +1844,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.203
   m_Pitch: 1
   Loop: 0
   Mute: 0
