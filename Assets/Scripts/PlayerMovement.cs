@@ -36,9 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(Controls.JumpBtn))
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 6F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
+            Debug.DrawRay(transform.position, Vector3.down * 10F, Color.red, 5F);
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 10F, ~(-1 << 8), QueryTriggerInteraction.Ignore))
             {
-                Rigid.AddForce(transform.up * 500F, ForceMode.Acceleration);
+                Rigid.AddForce(transform.up * 300F, ForceMode.Acceleration);
             }
         }
 

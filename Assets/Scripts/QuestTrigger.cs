@@ -11,13 +11,15 @@ public class QuestTrigger : MonoBehaviour
     public AudioClip VOClip;
     public float WaypointDelaySeconds;
 
+    private bool Entered = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !Entered)
         {
-            PlayVOClip();
             QuestManager.Instance.UpdateObjective();
-            Destroy(gameObject);
+            PlayVOClip();
+            Entered = true;
         }
 
     }
@@ -34,9 +36,9 @@ public class QuestTrigger : MonoBehaviour
             VOSource.clip = VOClip;
             VOSource.Play();
             if (WaypointDelaySeconds == 0)
-                DelayWaypoint(VOClip.length);
+                StartCoroutine(DelayWaypoint(VOClip.length));
             else
-                DelayWaypoint(WaypointDelaySeconds);
+                StartCoroutine(DelayWaypoint(WaypointDelaySeconds));
         }
         else
         {
@@ -46,8 +48,8 @@ public class QuestTrigger : MonoBehaviour
 
     private IEnumerator DelayWaypoint(float length)
     {
-        Waypoints.Instance.CloseEnoughDist = 100000F;
+        Waypoints.Instance.IconImg.enabled = false;
         yield return new WaitForSeconds(length);
-        Waypoints.Instance.CloseEnoughDist = 100F;
+        Waypoints.Instance.IconImg.enabled = true;
     }
 }
