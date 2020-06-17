@@ -7,10 +7,12 @@ using UnityEngine.SocialPlatforms;
 public class QuestManager : MonoBehaviour
 {
     public TextMeshProUGUI QuestText;
+    public GameObject Walloff;
 
     public GameObject[] Objectives;
     public int CurrentObjective = 0;
     public string LocalePrefix = "lvl1_";
+    private GameObject[] Spawners;
 
     #region Singleton
     public static QuestManager Instance;
@@ -28,6 +30,8 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        Spawners = GameObject.FindGameObjectsWithTag("SpawnMob");
+        
         Waypoints.Instance.UpdateWaypoint(Objectives[CurrentObjective].transform);
         QuestText.text = Locale.Get(LocalePrefix + CurrentObjective.ToString());
     }
@@ -40,6 +44,20 @@ public class QuestManager : MonoBehaviour
             Waypoints.Instance.enabled = true;
             Waypoints.Instance.UpdateWaypoint(Objectives[CurrentObjective].transform);
             QuestText.text = Locale.Get(LocalePrefix + CurrentObjective.ToString());
+
+            switch (CurrentObjective)
+            {
+                case 3:
+                    Destroy(Walloff);
+                break;
+
+                case 6:
+                    foreach (GameObject gameObject in Spawners) 
+                    {
+                        gameObject.SetActive(true);
+                    }
+                break;
+            }
         }
         else
         {
