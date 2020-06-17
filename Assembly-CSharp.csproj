@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\RandomDelete.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnMob.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnersController.cs" />
+    <Compile Include="Assets\Scripts\UI\FinalScreen.cs" />
     <Compile Include="Assets\Scripts\UI\LoginScreenControl.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuLocaleSelector.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />

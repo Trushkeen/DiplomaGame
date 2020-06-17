@@ -29,7 +29,7 @@ public class ItemInteraction : MonoBehaviour
             if (go.tag == "Loot")
             {
                 InteractionGO.SetActive(true);
-                InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
+                InteractionText.text = Locale.Get("presstopickup") + go.GetComponent<LootableItem>().Loot.Name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     PickupLoot(go);
@@ -38,7 +38,7 @@ public class ItemInteraction : MonoBehaviour
             else if (go.tag == "QuestLoot")
             {
                 InteractionGO.SetActive(true);
-                InteractionText.text = Locale.Get("presstopickup") + hit.collider.gameObject.name;
+                InteractionText.text = Locale.Get("presstopickup") + go.GetComponent<LootableItem>().Loot.Name;
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     PickupLoot(go, questItem: true);
@@ -78,7 +78,7 @@ public class ItemInteraction : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    //TODO: Escape
+                    DataContainer.MoneyEarned = FindObjectOfType<PlayerStats>().Balance;
                 }
             }
         }

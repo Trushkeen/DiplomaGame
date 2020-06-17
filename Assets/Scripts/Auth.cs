@@ -16,7 +16,7 @@ public class Auth : MonoBehaviour
     private static string Password;
     private const string Code = "db249957-a31d-428e-b9ca-3fcd4a60770c";
     private static UnityWebRequest AuthRequest;
-
+        
     public static void ConfirmUserData(string email, string password)
     {
         if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password) && email.Contains("@"))
