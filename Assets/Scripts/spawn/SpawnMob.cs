@@ -13,7 +13,6 @@ public class SpawnMob : MonoBehaviour
     public GameObject[] DefaultEnemies;
     public GameObject[] Minibosses;
 
-
     private void Start()
     {
         SpawnVector = gameObject.transform.position;
