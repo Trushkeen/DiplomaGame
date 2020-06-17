@@ -25,9 +25,9 @@ public class LootableItem : MonoBehaviour
             VOSource.clip = VOClip;
             VOSource.Play();
             if (WaypointDelaySeconds == 0)
-                DelayWaypoint(VOClip.length);
+                StartCoroutine(DelayWaypoint(VOClip.length));
             else
-                DelayWaypoint(WaypointDelaySeconds);
+                StartCoroutine(DelayWaypoint(WaypointDelaySeconds));
         }
         else
         {
@@ -37,8 +37,8 @@ public class LootableItem : MonoBehaviour
 
     private IEnumerator DelayWaypoint(float length)
     {
-        Waypoints.Instance.CloseEnoughDist = 100000F;
+        Waypoints.Instance.CloseEnoughDist = 100000000F;
         yield return new WaitForSeconds(length);
-        Waypoints.Instance.CloseEnoughDist = 100F;
+        Waypoints.Instance.CloseEnoughDist = 50F;
     }
 }

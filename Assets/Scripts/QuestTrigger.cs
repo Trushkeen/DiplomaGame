@@ -48,8 +48,8 @@ public class QuestTrigger : MonoBehaviour
 
     private IEnumerator DelayWaypoint(float length)
     {
-        Waypoints.Instance.IconImg.enabled = false;
+        Waypoints.Instance.CloseEnoughDist = 100000000F;
         yield return new WaitForSeconds(length);
-        Waypoints.Instance.IconImg.enabled = true;
+        Waypoints.Instance.CloseEnoughDist = 50F;
     }
 }

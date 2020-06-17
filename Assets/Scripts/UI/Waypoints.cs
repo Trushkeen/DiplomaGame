@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Waypoints : MonoBehaviour
 {
     public Image IconImg;
-    //public Text DistanceText;
+    public bool Visible = true;
 
     public Transform Player;
     public Transform Target;
