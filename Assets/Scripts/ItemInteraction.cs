@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemInteraction : MonoBehaviour
 {
@@ -79,6 +80,7 @@ public class ItemInteraction : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     DataContainer.MoneyEarned = FindObjectOfType<PlayerStats>().Balance;
+                    SceneManager.LoadScene("FinalScreen");
                 }
             }
         }

@@ -21,7 +21,14 @@ public class FinalScreen : MonoBehaviour
 
     private void Start()
     {
-        Request = UnityWebRequest.Get(@"https://mplace.azurewebsites.net/api/v1/balance?id=" + Auth.ThisUser.Id 
+        //test user's id for debug
+        int id = 10001;
+        if (Auth.ThisUser != null)
+        {
+            id = Auth.ThisUser.Id;
+        }
+        
+        Request = UnityWebRequest.Get(@"https://mplace.azurewebsites.net/api/v1/balance?id=" + id
             + "&amount=" + EarnedMoney + "&code=" + Code);
         var response = Request.SendWebRequest();
         response.completed += OnRequestFinished;
@@ -35,6 +42,7 @@ public class FinalScreen : MonoBehaviour
 
     private void OnRequestFinished(AsyncOperation obj)
     {
+        LoadingImage.enabled = false;
         ExitButton.SetActive(true);
         switch (Request.responseCode)
         {
