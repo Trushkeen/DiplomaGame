@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 public class MainMenuUI : MonoBehaviour
 {
+    public Slider slider;
+
+    void Update() 
+    {
+        AudioListener.volume = slider.value;
+    }
+
     public void StartDebugLevel()
     {
         SceneManager.LoadScene("City_Level1", LoadSceneMode.Single);

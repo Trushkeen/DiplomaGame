@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject Player;
     public GameObject Crosshair;
+    public Slider slider;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-
+        AudioListener.volume = slider.value;
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -57,5 +59,15 @@ public class PauseMenu : MonoBehaviour
     {
         MouseMove.Unfreeze();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ShowTab(GameObject obj)
+    {
+        obj.SetActive(true);
+    }
+
+    public void HideTab(GameObject obj)
+    {
+        obj.SetActive(false);
     }
 }
